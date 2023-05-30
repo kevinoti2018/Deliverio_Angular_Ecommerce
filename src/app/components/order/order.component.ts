@@ -38,7 +38,7 @@ export class OrderComponent implements OnInit {
    
   placeOrder(): void {
     const order: Order = {
-      orderId: Math.floor(Math.random() + 1),
+      orderId: Math.floor(Math.random() * 100),
       items: this.cartService.getCartItems(),
       firstName: this.firstName,
       lastName: this.lastName,

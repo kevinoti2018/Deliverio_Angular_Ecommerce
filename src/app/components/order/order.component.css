@@ -45,7 +45,6 @@ html{
 .checkout-form .input-group input:focus{
     outline: none;
 }
-
 button{
     background-color: rgb(255,153,0);
     color: white;
