@@ -1,6 +1,7 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { ProductsComponent } from './products.component';
+import { RouterOutlet } from '@angular/router';
 
 describe('ProductsComponent', () => {
   let component: ProductsComponent;

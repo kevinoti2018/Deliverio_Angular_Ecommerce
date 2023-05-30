@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 footer{
     width: 100%;
     height: 3rem;
@@ -9,4 +10,18 @@ footer{
     justify-content: center;
     align-items: center;
     margin-top: 0.5rem;
+=======
+.footer{
+    margin-top: 100px;
+    background: #000;
+    color: white;
+    padding: 20px;
+}
+.footer li{
+    list-style: none;
+}
+.footer li a{
+    color: white;
+    text-decoration: none;
+>>>>>>> 05fef476fc6579df88f5659fee8541f86004d7f8
 }

@@ -1,0 +1,166 @@
+:root{
+    --primary:#013D29 ;
+    --shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    --secondary:#f68b1e;
+    --tertiary: #FCF0E4;
+    --container-color: #fff;
+
+}
+
+.container{
+    margin: 2rem 2rem;
+    background-color: #f1f1f2;
+    height: 100vh;
+    display: grid;
+    grid-template-columns: 1fr 16rem;
+    gap: .5rem;
+}
+
+.container .left{
+    width: 100%;
+    height: 100%;
+    gap: .5rem;
+    background-color: #fff;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+.container .left .top{
+    display: grid;
+    grid-template-columns: 19rem 1fr;
+    /* background-color: red; */
+}
+.container .left .l-left img{
+    width: 250px;
+    height: 250px;
+    object-fit: contain;
+    margin: 10px;
+}
+.container .left .top .l-right{
+     /* background-color: red; */
+     padding: 0.5rem;
+}
+.container .left .top .l-right .title{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.5rem;
+}
+.container .left .top .l-right .title ion-icon, .mid .stars{
+    font-size: 1.6rem;
+    color: #f68b1e;
+    font-weight: bold;
+}
+.mid .stars span{
+    color: #7d7d82;
+    font-size: 1.2rem;
+    font-weight: normal;
+}
+.container .left .top .l-right .title h3{
+    width: 28rem;
+    font-weight: 400;
+    font-size: 1.6rem;
+    /* background-color: red; */
+    text-align: left;
+}
+.container .left .top .l-right .free p{
+    background-color: var(--primary);
+    color: white;
+    width: 6rem;
+    padding: 0.1rem;
+    text-align: center;
+}
+
+.container .left .top .l-right .flash{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 2rem;
+    background-color: var(--secondary);
+    padding: 0.5rem;
+    color: white;
+}
+.container .left .top .l-right.flash p span{
+    color: var(--primary);
+    font-size: 1.2rem;
+}
+.container .left .top .l-right .button button{
+    width: 100%;
+    display: flex;
+    gap: 17rem;
+    padding: 0.5rem;
+    /* justify-content: space-around; */
+    color: white;
+    background-color: var(--primary);
+    border: none;
+    height: 3rem;
+    font-size: 1.2rem;
+    align-items: center;
+    cursor: pointer;
+}
+.container .left .top .l-right .button button span ion-icon{
+    font-size: 2rem;
+}
+.container .left   .bottom{
+    padding: 0.5rem;
+    /* background-color: #1f17a3; */
+}
+.container .left  .bottom .b-top h3{
+  width: 100%;
+  border-bottom: 1px solid #a3a3a6;
+  height: 1.9rem;
+}
+.container .right{
+    width: 100%;
+    background-color: #fff;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    padding: 0.5rem;
+}
+.container .right .j{
+    font-weight: bold;
+    font-size: 1.2rem;
+}
+.container .right .j span{
+    color: #f68b1e;
+}
+.container .right .location{
+    display: flex;
+    flex-direction: column;
+    gap: .5rem;
+}
+
+.container .right .location p{
+    margin-bottom: -.1rem;
+}
+
+.container .right .location select{
+    height: 2.4rem;
+    font-size: 1.1rem;
+    color: #7d7d82;
+}
+.delivery .delivery-box .title{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.delivery .delivery-box .title p,.content p span{
+    font-size: .9rem;
+    color: #1f17a3;
+    font-weight: 500;
+}
+
+.delivery-button button{
+    width: 100%;
+    height: 2rem;
+    font-size: 1rem;
+    text-transform: uppercase;
+    color: white;
+    background-color: var(--primary);
+    border-radius: .3rem;
+    border: none;
+    display: flex;
+    gap: 4rem;
+    align-items: center;
+    cursor: pointer;
+}
+
+

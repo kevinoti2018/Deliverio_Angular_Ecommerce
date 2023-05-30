@@ -1,1 +1,129 @@
-<p>product-detail works!</p>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{product.name}} details</title>
+</head>
+<body>
+    <div class="container">
+        <div class="left">
+            <div class="top">
+                <div class="l-left">
+                    <img src="{{product.images}}" alt="not found"/>
+                </div>
+                <div class="l-right">
+                    <div class="title">
+                        <h3>{{product.name}}</h3>
+                        <!-- <ion-icon name="heart-outline"></ion-icon> -->
+                    </div>
+                    <div class="mid">
+                        <h4>category|{{product.category}}</h4>
+                        <div class="stars">
+                            <!-- <ion-icon name="star"></ion-icon>
+                            <ion-icon name="star"></ion-icon>
+                            <ion-icon name="star"></ion-icon>
+                            <ion-icon name="star"></ion-icon>
+                            <ion-icon name="star"></ion-icon>
+                            <ion-icon name="star"></ion-icon> -->
+                            <span>(360 verified ratings)</span>
+                        </div>
+                    </div>
+                    <div class="free">
+                        <p>Free delivery</p>
+                    </div>
+                    <div class="flash">
+                        <!-- <ion-icon name="pricetag"></ion-icon> -->
+                        <p>  <span></span> Flash sales</p>
+                        <p>Starts on 22 May:900am</p>
+                    </div>
+                    <div class="price">
+                        <h1>${{product.price}}</h1>
+                    </div>
+                    <div class="button">
+                        <!-- <ion-icon name="cart"></ion-icon> -->
+                        <button> <span></span> <a href="./checkout.html" style="text-decoration: none; color: white;">Add to cart</a></button>
+                    </div>
+                </div>
+               
+            </div>
+            <div class="bottom">
+                <div class="b-top">
+                    <h3>{{product.name}} details</h3>
+                   <p> {{product.description}}
+                   </p>
+                </div>
+                <div class="b-bottom">
+                    <ul>
+                        <li>lorem ipsun</li>
+                        <li>lorem ipsun</li>
+                        <li>lorem ipsun</li>
+                    </ul>
+                </div>
+            </div>
+
+        </div>
+        <div class="right">
+            <h3>DELIVERY AND RETURNS</h3>
+            <p class="j">Deliverio  <span>Express</span> </p>
+
+            <div class="location">
+                <p>Choose your location</p>
+                <select name="location" id="">
+                    <option value="Nai">Nairobi</option>
+                    <option value="Nai">Nairobi</option>
+                    <option value="Nai">Nairobi</option>
+                </select>
+                <select name="location" id="">
+                    <option value="Nai">Nairobi</option>
+                    <option value="Nai">Nairobi</option>
+                    <option value="Nai">Nairobi</option>
+                </select>
+            </div>
+            <div class="delivery">
+                <div class="delivery-box">
+                    <div class="title">
+                        <h3>Door delivery</h3>
+                        <p>Details</p>
+                    </div>
+                    <div class="content">
+                        <p>Delivery ksh 112 (free delivery if order above ksh 1,999)</p>
+                        <p>Delivery by 23 may when you order within the next 4 hours 30 min </p>
+                    </div>
+                    
+                </div>
+                <div class="delivery-box">
+                    <div class="title">
+                        <h3>Door delivery</h3>
+                        <p>Details</p>
+                    </div>
+                    <div class="content">
+                        <p>Delivery ksh 112 (free delivery if order above ksh 1,999)</p>
+                        <p>Delivery by 23 may when you order within the next 4 hours 30 min </p>
+                    </div>
+                    
+                </div>
+                <div class="delivery-box">
+                    <div class="title">
+                        <h3>Return policy</h3>
+                    </div>
+                    <div class="content">
+                        <p>Easy Return ,Quick Refund  <span>see more</span></p>
+
+                    </div>
+                    
+                </div>
+                <div class="delivery-button">
+                    <!-- <ion-icon name="cart"></ion-icon> -->
+                    <button style="background-color: rgb(71, 4, 71);"> <span></span> <a (click)="addToCart(product)" style="text-decoration: none; color: white;">Add to cart</a></button>
+                </div>
+                
+
+            </div>
+        </div>
+    </div>
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+<script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+</body>
+</html>
