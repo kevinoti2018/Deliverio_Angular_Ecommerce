@@ -12,22 +12,32 @@ import { RegisterComponent } from './components/register/register.component';
 import { CategoriesComponent } from './components/categories/categories.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { ContactUsComponent } from './components/contact-us/contact-us.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { OrderComponent } from './components/order/order.component';
+import { CarouselComponent } from "./components/carousel/carousel.component";
+import { NgImageSliderModule } from 'ng-image-slider';
+
 
 @NgModule({
-  declarations: [
-    AppComponent,
-    NavComponent,
-    HeroComponent,
-    LoginComponent,
-    RegisterComponent,
-    CategoriesComponent,
-    FooterComponent,
-    ContactUsComponent
-  ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule
-  ],
-  bootstrap: [AppComponent]
+    declarations: [
+        AppComponent,
+        NavComponent,
+        HeroComponent,
+        LoginComponent,
+        RegisterComponent,
+        CategoriesComponent,
+        FooterComponent,
+        ContactUsComponent
+    ],
+    bootstrap: [AppComponent],
+    imports: [
+        BrowserModule,
+        AppRoutingModule,
+        ReactiveFormsModule,
+        FormsModule,
+        OrderComponent,
+        CarouselComponent,
+        NgImageSliderModule,
+    ]
 })
 export class AppModule { }

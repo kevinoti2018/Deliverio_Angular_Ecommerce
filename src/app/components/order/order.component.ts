@@ -1,13 +1,24 @@
 import { Component, OnInit } from '@angular/core';
+import { from } from 'rxjs';
 import { Order } from 'src/Interfaces/Interfaces';
 import { CartService } from 'src/app/services/cartservice/cart.service';
 import { OrderService } from 'src/app/services/orderservice/order.service';
+import { FormsModule } from '@angular/forms';
+import { CommonModule } from '@angular/common';
+
 
 @Component({
   selector: 'app-order',
   templateUrl: './order.component.html',
-  styleUrls: ['./order.component.css']
+  styleUrls: ['./order.component.css'],
+  standalone:true,
+  imports: [
+    CommonModule,
+    FormsModule
+  ]
 })
+
+
 export class OrderComponent implements OnInit {
   orders: Order[] = [];
   cartTotal:number=0;

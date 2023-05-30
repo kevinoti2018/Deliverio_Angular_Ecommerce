@@ -2,6 +2,7 @@ import { Component,OnInit } from '@angular/core';
 import { Category } from 'src/Interfaces/Interfaces';
 import { CategoryService } from 'src/app/services/categoryservices/category.service';
 
+
 @Component({
   selector: 'app-hero',
   templateUrl: './hero.component.html',
