@@ -47,12 +47,6 @@
 .categories .box:hover{
     box-shadow:  rgba(0, 0, 0, 0.24) 0px 3px 8px;
 }
-
-.custom-slider {
-    /* Add your custom styles here */
-    /* background-color:red; */
-
-  }
   
   .custom-slider .image-slider-wrapper {
     /* Styles for the slider wrapper */
