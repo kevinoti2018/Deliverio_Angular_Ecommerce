@@ -5,10 +5,10 @@
         <div>
           <img [src]="item.product.images" [alt]="item.product.name" width="100">
           <h3>{{ item.product.name }}</h3>
-          <p>{{ item.product.description }}</p>
           <p>Price: ${{ item.product.price }}</p>
-          <p>Quantity: {{ item.quantity }}</p>
+          
           <button (click)="removeFromCart(item.product)">-</button>
+          <p>{{ item.quantity }}</p>
           <button (click)="addToCart(item.product)">+</button>
         </div>
       </li>

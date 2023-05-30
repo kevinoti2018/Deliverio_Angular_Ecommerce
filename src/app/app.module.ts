@@ -18,26 +18,26 @@ import { CarouselComponent } from './components/carousel/carousel.component';
  
 
 @NgModule({
-  declarations: [
-    AppComponent,
-    NavComponent,
-    HeroComponent,
-    LoginComponent,
-    RegisterComponent,
-    CategoriesComponent,
-    FooterComponent,
-    ContactUsComponent,
-    
-  ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
-    NgImageSliderModule,
-    ReactiveFormsModule,
-    FormsModule,
-    NgbModule,
-    CarouselComponent
-  ],
-  bootstrap: [AppComponent]
+    declarations: [
+        AppComponent,
+        NavComponent,
+        HeroComponent,
+        LoginComponent,
+        RegisterComponent,
+        CategoriesComponent,
+        FooterComponent,
+        ContactUsComponent,
+    ],
+    bootstrap: [AppComponent],
+    imports: [
+        BrowserModule,
+        AppRoutingModule,
+        NgImageSliderModule,
+        ReactiveFormsModule,
+        FormsModule,
+        NgbModule,
+        CarouselComponent,
+        ProductsComponent
+    ]
 })
 export class AppModule { }
