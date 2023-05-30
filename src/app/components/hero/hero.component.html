@@ -1,1 +1,15 @@
-<p>hero works!</p>
+<div class="main">
+    <div class="hero">
+        <div class="left" >
+            <div class="categories" *ngFor="let category of categories">
+                <p>{{category.name}}</p>
+            </div>
+        </div>
+        <div class="right">
+            <app-carousel></app-carousel>
+        </div>
+    </div>
+    <app-categories></app-categories>
+    <!-- <app-categories></app-categories> -->
+    
+</div>

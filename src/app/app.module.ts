@@ -12,12 +12,6 @@ import { RegisterComponent } from './components/register/register.component';
 import { CategoriesComponent } from './components/categories/categories.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { ContactUsComponent } from './components/contact-us/contact-us.component';
-import { NotfoundComponent } from './components/notfound/notfound.component';
-import { RouterModule } from '@angular/router';
-import { OrderComponent } from './components/order/order.component';
-import { FormsModule } from '@angular/forms';
-
-
 
 @NgModule({
   declarations: [
@@ -28,19 +22,12 @@ import { FormsModule } from '@angular/forms';
     RegisterComponent,
     CategoriesComponent,
     FooterComponent,
-    ContactUsComponent,
-    NotfoundComponent,
-    OrderComponent
+    ContactUsComponent
   ],
   imports: [
     BrowserModule,
-    ProductsComponent,
-    RouterModule,
-    ProductDetailComponent,
-    AppRoutingModule,
-    FormsModule,
+    AppRoutingModule
   ],
-  providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
