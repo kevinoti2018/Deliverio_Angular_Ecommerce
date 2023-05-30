@@ -1,16 +1,22 @@
 export  interface User{
     id:string,
-    name:string,
+    username:string,
     email:string,
     password:string,
     confirm_password:string
 
 } 
 
+export interface LoginUser{
+    email:string,
+    password:string,
+}
 export  interface Category{
     id:string,
     name:string,
     image:string
+    thumbImage: string,
+     alt: string
 }
 
 export  interface Product{

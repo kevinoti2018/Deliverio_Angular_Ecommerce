@@ -1,0 +1,37 @@
+
+	<!-- <div class="left">
+		<h3>Get the best deals !!</h3>
+		<p>Upto 50% off!!</p>
+		<button>shop</button>
+	</div>
+	<div class="right">
+		<img src="https://purepng.com/public/uploads/thumbnail/purepng.com-sunflower-oilsunflower-oilcooking-oilfrying-oilnon-volatile-oil-1411529833620gmvj9.png" alt="">
+	</div> -->
+
+<div class="cont">
+
+	<ngb-carousel
+  *ngIf="images"
+  [showNavigationArrows]="showNavigationArrows"
+  [showNavigationIndicators]="showNavigationIndicators"
+>
+  <ng-template ngbSlide *ngFor="let image of images">
+    <div class="carousel-slide">
+		<div class="caption-container">
+			<h3>Get the best deals !!</h3>
+			<p>Upto 50% off!!</p>
+			<a routerlink="/login">
+				<button>shop now</button>
+			</a>
+			
+		  </div>
+      <div class="image-container">
+        <img [src]="image" alt="Random slide" />
+      </div>
+     
+    </div>
+  </ng-template>
+</ngb-carousel>
+
+
+</div>
