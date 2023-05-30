@@ -9,6 +9,7 @@ import { CartComponent } from './components/cart/cart.component';
 import { OrderComponent } from './components/order/order.component';
 import { HeroComponent } from './components/hero/hero.component';
 import { RegisterComponent } from './components/register/register.component';
+import { ContactUsComponent } from './components/contact-us/contact-us.component';
 
 
 const routes:Routes=[
@@ -16,6 +17,7 @@ const routes:Routes=[
   {path:'login',component:LoginComponent},
   {path:'register',component:RegisterComponent},
   {path:'products',component:ProductsComponent},
+  {path:'help',component:ContactUsComponent},
   {path:'cart',component:CartComponent},
   {path:'checkout/:id',component:OrderComponent},
   {path:'product/:id',component:ProductDetailComponent},

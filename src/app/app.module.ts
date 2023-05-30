@@ -15,6 +15,7 @@ import { ContactUsComponent } from './components/contact-us/contact-us.component
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { CarouselComponent } from './components/carousel/carousel.component';
+import { NzCollapseModule } from 'ng-zorro-antd/collapse';
  
 
 @NgModule({
@@ -26,7 +27,7 @@ import { CarouselComponent } from './components/carousel/carousel.component';
         RegisterComponent,
         CategoriesComponent,
         FooterComponent,
-        ContactUsComponent,
+       
     ],
     bootstrap: [AppComponent],
     imports: [
@@ -37,7 +38,9 @@ import { CarouselComponent } from './components/carousel/carousel.component';
         FormsModule,
         NgbModule,
         CarouselComponent,
-        ProductsComponent
+        ProductsComponent,
+        ContactUsComponent,
+        NzCollapseModule
     ]
 })
 export class AppModule { }

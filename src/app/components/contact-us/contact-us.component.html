@@ -1,9 +1,43 @@
 <div class="h-container">
-    <div class="top"></div>
+    <div class="top">
+       <h1> NEED HELP ??</h1>
+    </div>
+    <div class="mid">
+        <div class="left">
+            <h1> <span>call</span> 0712345678</h1>
+            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Excepturi quia praesentium reiciendis fugiat accusamus neque nisi ipsum nulla, recusandae debitis, eveniet tempore necessitatibus laborum eius quisquam adipisci nihil voluptatum. Veniam?</p>
+        </div>
+        <div class="right">
+            <img src="/assets/images/contactperson.png" alt="">
+        </div>
+    </div>
     <div class="bottom">
-        <div class="left"></div>
-        <div class="right"></div>
+        <h1>Frequently Asked Questions</h1>
+        <p>
+            <button
+                type="button"
+                class="btn btn-outline-primary"
+                (click)="collapse.toggle()"
+                [attr.aria-expanded]="!isCollapsed"
+                aria-controls="collapseExample"
+            >
+                Toggle
+            </button>
+        </p>
+        <div style="min-height: 120px; width: 700px; ">
+            <div #collapse="ngbCollapse" [(ngbCollapse)]="isCollapsed" [horizontal]="true" style="max-width: 700px;">
+                <div class="card" style="width: 700px">
+                    <div class="card-body">
+                        <h3>Return Policy</h3>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis incidunt consequuntur molestias recusandae quam delectus voluptate repudiandae maiores error nesciunt quaerat quia voluptates voluptas, explicabo officia, labore cupiditate, doloremque fuga.</p>
+                        <h3>Delivery</h3>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis incidunt consequuntur molestias recusandae quam delectus voluptate repudiandae maiores error nesciunt quaerat quia voluptates voluptas, explicabo officia, labore cupiditate, doloremque fuga.</p>
+                        <h3>Tracking goods</h3>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis incidunt consequuntur molestias recusandae quam delectus voluptate repudiandae maiores error nesciunt quaerat quia voluptates voluptas, explicabo officia, labore cupiditate, doloremque fuga.</p>
+                        </div>
+                </div>
+            </div>
+        </div>
     </div>
 </div>
 
-<!-- <ng-image-slider [images]="imgCollection" #nav></ng-image-slider> -->

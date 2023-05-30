@@ -1,3 +1,12 @@
+
+:root{
+  --primary:#013D29 ;
+  --shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  --secondary:#f68b1e;
+  --tertiary: #FCF0E4;
+  --container-color: #fff;
+  --secondary-container:#F6F6F6;
+}
 /* Styling for the cart container */
 .container {
     max-width: 800px;
@@ -104,3 +113,27 @@
     background-color: #0056b3;
   }
   
+  .empty{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    background-color: #FCF0E4;
+    height: 10rem;
+    border-radius: .5rem;
+  }
+  .empty p{
+    font-weight: 500;
+    color: #f68b1e;
+    font-size: 1.4rem;
+  }
+  .empty button{
+    background-color:#013D29 ;
+    padding: 0.8rem;
+    width: 8rem;
+    border: none;
+    color: white;
+    font-weight: 500;
+    border-radius: .5rem;
+  }
