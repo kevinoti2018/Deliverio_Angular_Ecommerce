@@ -1,0 +1,202 @@
+:root{
+    --primary:#013D29 ;
+    --shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    --secondary:#f68b1e;
+    --tertiary: #FCF0E4;
+    --container-color: #fff;
+    --secondary-container:#F6F6F6;
+}
+.deals{
+    margin-top: .5rem;
+    height: 16rem;
+    width: 100%;
+    background-color: #fff;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+.deals .top{
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    height: 3rem;
+    background-color: #003C29;
+    color: white;
+    padding: 0.5rem;
+}
+.deals .top h3{
+    font-size: 1.4rem;
+}
+.deals .top p{
+    font-size: 1.1rem;
+    padding: 0.5rem;
+    font-weight: 600;
+}
+.deals .bottom{
+    background-color: #ffff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.deals .bottom .box{
+    height: 12rem;
+    padding: 0.5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #fff;
+}
+.box .tops{
+    background-color:#d4d4d6;
+    height: 85%;
+    width: 100%;
+    border-radius: .4rem;
+}
+.box .tops img{
+    width: 175px;
+    height: 120px;
+    object-fit: cover;
+}
+.more-deals{
+    margin-top: .5rem;
+    height: 34rem;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+
+}
+.more-deals .top{
+    width: 100%;
+    height: 3rem;
+    background-color: #003C29;
+    color: white;
+    padding: 0.5rem;
+    text-align: center;
+}
+.more-deals .bottom{
+display: grid;
+grid-template-columns: repeat(3, 1fr);
+margin-top: .5rem;
+align-items: center;
+justify-content: center;
+
+}
+
+.more-deals .bottom .box{
+    width: auto;
+    height: 14rem;
+    padding: 0.5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #d4d4d6;
+    margin: .5rem;
+    border-radius: .4rem;
+}
+
+
+.home-deals{
+    margin-top: .5rem;
+    height: 21rem;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+.home-deals .top{
+    width: 100%;
+    height: 3rem;
+    background-color: #003C29;
+    color: white;
+    padding: 0.5rem;
+    text-align: center;
+}
+.home-deals .bottom {
+    display: flex;
+    margin-top: .5rem;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.home-deals .bottom .box{
+    width: 25rem;
+    height: 16rem;
+    /* padding: 0.5rem; */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #d4d4d6;
+    margin: .5rem;
+    /* border-radius: .4rem; */
+    display: grid;
+    grid-template-columns:10rem 1fr;
+}
+.home-deals .bottom .box .left{
+    height: 100%;
+    background-color: #FCF0E4;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 0;
+   
+}
+.home-deals .bottom .box .left h3{
+    font-size: 1.2rem;
+    color: #003C29;
+}
+.home-deals .bottom .box .left button{
+    background-color: #f68b1e;
+    border: none;
+    border-radius: .5rem;
+    padding: .5rem;
+    width: 7rem;
+    font-weight: 800;
+    color: white;
+    font-size: 1.2rem;
+
+}
+.home-deals .bottom .box .right{
+    background-color: #F6F6F6;
+    width: 100%;
+    height: 100%;
+    border-radius: 0;
+}
+
+.electronics{
+    margin-top: .5rem;
+    height: 20rem;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+.electronics .top{
+    width: 100%;
+    height: 3rem;
+    background-color: #003C29;
+    color: white;
+    padding: 0.5rem;
+    text-align: center;
+}
+.electronics .bottom{
+    display: flex;
+    justify-content: space-evenly;
+}
+.electronics .bottom .box{
+
+    width: 25rem;
+    height: 16rem;
+    /* padding: 0.5rem; */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #FCF0E4;
+    margin: .5rem;
+    border-radius: .4rem;
+    display: grid;
+    grid-template-columns:10rem 1fr;
+}
+.footer{
+    width: 100%;
+    height: 3rem;
+    background-color: #535357;
+    text-align: center;
+    color: white;
+    font-size: 1.2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 0.5rem;
+}

@@ -25,18 +25,23 @@ export  interface Product{
 export  interface Cart{
     id:string,
     product_id:string,
-    quantity:number,
     subtotal:number
 }
 
-export  interface Order{
-    id:string,
-    user_id:string,
-    cart_id:string,
-    total:number
-}
+export interface CartItem {
+    id:number;
+    product: Product;
+    quantity: number;
+  }
+  
 
-export  interface OrderItems{
-    id:string,
-    order_id:string,
-}
+ export  interface Order {
+    orderId: number;
+    items: CartItem[];
+    firstName:string;
+    lastName:string;
+    email:string;
+    county:string;
+    city:string;
+    shippingAddress: string;
+  }

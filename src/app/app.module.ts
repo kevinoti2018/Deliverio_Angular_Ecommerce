@@ -12,23 +12,33 @@ import { RegisterComponent } from './components/register/register.component';
 import { CategoriesComponent } from './components/categories/categories.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { ContactUsComponent } from './components/contact-us/contact-us.component';
+import { NotfoundComponent } from './components/notfound/notfound.component';
+import { RouterModule } from '@angular/router';
+import { OrderComponent } from './components/order/order.component';
+import { FormsModule } from '@angular/forms';
+
+
 
 @NgModule({
   declarations: [
     AppComponent,
     NavComponent,
     HeroComponent,
-    ProductsComponent,
-    ProductDetailComponent,
     LoginComponent,
     RegisterComponent,
     CategoriesComponent,
     FooterComponent,
-    ContactUsComponent
+    ContactUsComponent,
+    NotfoundComponent,
+    OrderComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    ProductsComponent,
+    RouterModule,
+    ProductDetailComponent,
+    AppRoutingModule,
+    FormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

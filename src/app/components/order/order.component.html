@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Checkout Page</title>
+  </head>
+  <body>
+    <div class="main">
+      <div class="checkout-container">
+        <div class="checkout">
+         
+          <div class="checkout-form">
+            <header><h2>Checkout</h2></header>
+            <div class="input-group">
+              <label for="firstname">FirstName</label><br />
+              <input type="text" id="firstname" placeholder="enter firstname" [(ngModel)]="firstName" />
+            </div>
+            <div class="input-group">
+              <label for="lastName">lastName</label><br />
+              <input
+                type="text"
+                id="lastName"
+                placeholder="enter lastName"
+                [(ngModel)]="lastName"
+              />
+            </div>
+            <div class="input-group">
+              <label for="Address">Address</label><br />
+              <input type="text" id="Address" placeholder="enter Address"  [(ngModel)]="address"/>
+            </div>
+            <div class="input-group">
+              <label for="Email">Email</label><br />
+              <input type="Email" id="Email" placeholder="enter Email"  [(ngModel)]="email"/>
+            </div>
+            <div class="input-group">
+              <label for="County">County</label><br />
+              <input type="text" id="County" placeholder="enter County" [(ngModel)]="county"/>
+            </div>
+            <div class="input-group">
+              <label for="City">City</label><br />
+              <input type="text" id="City" placeholder="enter City" [(ngModel)]="city" />
+            </div>
+       
+           
+            
+          </div>
+
+          <div class="pay-section">
+            <header>
+              <h3>Order Details</h3>
+            </header>
+            <hr />
+            <div class="cart-summary">
+              <div class="cart-details">
+                <h4>Cart Subtotal:</h4>
+                <h4>{{ cartTotal }}</h4> <!-- Replace with the actual cart total value -->
+              </div>
+              <div class="shipping-fee">
+                <h4>Shipping:</h4>
+                <h4>0</h4> <!-- Set the shipping fee to zero -->
+              </div>
+              <div class="order-total">
+                <h4>Total:</h4>
+                <h4>{{ cartTotal }}</h4> <!-- Order total is the same as cart total -->
+              </div>
+
+              <button (click)="placeOrder()">Place Order</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
