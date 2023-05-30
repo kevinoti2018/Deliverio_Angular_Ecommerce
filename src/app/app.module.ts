@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
+import { NgImageSliderModule } from 'ng-image-slider';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { NavComponent } from './components/nav/nav.component';
@@ -12,6 +12,10 @@ import { RegisterComponent } from './components/register/register.component';
 import { CategoriesComponent } from './components/categories/categories.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { ContactUsComponent } from './components/contact-us/contact-us.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { CarouselComponent } from './components/carousel/carousel.component';
+ 
 
 @NgModule({
   declarations: [
@@ -22,11 +26,17 @@ import { ContactUsComponent } from './components/contact-us/contact-us.component
     RegisterComponent,
     CategoriesComponent,
     FooterComponent,
-    ContactUsComponent
+    ContactUsComponent,
+    
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    NgImageSliderModule,
+    ReactiveFormsModule,
+    FormsModule,
+    NgbModule,
+    CarouselComponent
   ],
   bootstrap: [AppComponent]
 })
