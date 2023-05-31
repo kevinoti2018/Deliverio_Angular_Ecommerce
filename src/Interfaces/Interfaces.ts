@@ -18,6 +18,11 @@ export  interface Category{
     thumbImage: string,
      alt: string
 }
+export interface Category1{
+    ID:string,
+    NAME:string,
+    IMAGE:string
+}
 
 export  interface Product{
     category:string,

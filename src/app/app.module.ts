@@ -1,4 +1,5 @@
-import { NgModule } from '@angular/core';
+import { NgModule} from '@angular/core';
+import { HttpClientModule } from '@angular/common/http'
 import { BrowserModule } from '@angular/platform-browser';
 import { NgImageSliderModule } from 'ng-image-slider';
 import { AppRoutingModule } from './app-routing.module';
@@ -14,8 +15,11 @@ import { FooterComponent } from './components/footer/footer.component';
 import { ContactUsComponent } from './components/contact-us/contact-us.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+
 import { CarouselComponent } from './components/carousel/carousel.component';
 import { NzCollapseModule } from 'ng-zorro-antd/collapse';
+// import { CarouselModule } from 'ngx-owl-carousel-o';
+
  
 
 @NgModule({
@@ -40,7 +44,9 @@ import { NzCollapseModule } from 'ng-zorro-antd/collapse';
         CarouselComponent,
         ProductsComponent,
         ContactUsComponent,
-        NzCollapseModule
+        NzCollapseModule,
+        HttpClientModule
     ]
+        
 })
 export class AppModule { }

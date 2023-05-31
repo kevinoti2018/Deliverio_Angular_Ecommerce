@@ -1,5 +1,7 @@
+import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Category } from 'src/Interfaces/Interfaces';
+import { Observable } from 'rxjs';
+import { Category, Category1 } from 'src/Interfaces/Interfaces';
 
 @Injectable({
   providedIn: 'root'
@@ -65,7 +67,12 @@ export class CategoryService {
  
   ];
   
-  constructor() { }
+  constructor(private httpClient:HttpClient) { 
+    
+  }
+  getCategory1():Observable<Category1>{
+    return this.httpClient.get<Category1>('localhost:5000/products/getcategories')
+  }
   getCategory(){
     return this.categories
   }
