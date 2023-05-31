@@ -27,6 +27,6 @@ showNavigationIndicators = true;
 		config.interval = 2000;
 		config.wrap = false;
 		config.keyboard = false;
-		config.pauseOnHover = false;
+		config.pauseOnHover = true;
 }
 }

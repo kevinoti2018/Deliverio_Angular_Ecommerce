@@ -42,6 +42,9 @@
     font-size: 1.1rem;
 }
 
+.search input:focus{
+    outline: none;
+}
 .search button, .links button{
     width: 6rem;
     padding: .5rem;
@@ -73,4 +76,7 @@
 .links p a{
     color: #013D29;
     text-decoration: none;
+}
+button:hover{
+    background-color: #f68b1e;
 }

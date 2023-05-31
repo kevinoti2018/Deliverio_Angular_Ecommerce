@@ -1,3 +1,4 @@
+import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { LoginUser } from 'src/Interfaces/Interfaces';
 
@@ -6,11 +7,12 @@ import { LoginUser } from 'src/Interfaces/Interfaces';
 })
 export class UserService {
   users:LoginUser[]=[]
-  constructor() { }
+  constructor(private httpClient: HttpClient) { }
 
   getUser(){
     return this.users
   }
+  
   loginUser(newUser:LoginUser){
     return this.users.push(newUser)
   }
