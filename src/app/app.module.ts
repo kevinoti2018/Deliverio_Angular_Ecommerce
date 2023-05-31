@@ -15,7 +15,10 @@ import { ContactUsComponent } from './components/contact-us/contact-us.component
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { CarouselComponent } from './components/carousel/carousel.component';
- 
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { HttpClientModule } from '@angular/common/http';
+
+
 
 @NgModule({
     declarations: [
@@ -37,7 +40,9 @@ import { CarouselComponent } from './components/carousel/carousel.component';
         FormsModule,
         NgbModule,
         CarouselComponent,
-        ProductsComponent
+        ProductsComponent,
+        BrowserAnimationsModule,
+        HttpClientModule,
     ]
 })
 export class AppModule { }

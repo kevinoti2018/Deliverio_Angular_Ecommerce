@@ -11,6 +11,7 @@ import { HeroComponent } from './components/hero/hero.component';
 import { RegisterComponent } from './components/register/register.component';
 
 
+
 const routes:Routes=[
   {path:'',component:HeroComponent},
   {path:'login',component:LoginComponent},

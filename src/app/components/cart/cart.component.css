@@ -35,6 +35,7 @@
     display: flex;
     align-items: center;
     flex-wrap: wrap;
+    justify-content: space-evenly;
   }
   
   li img {
@@ -58,16 +59,13 @@
     margin-left: 10px;
     padding: 5px 10px;
     font-size: 16px;
-    background-color: #007bff;
+    background-color: #f68b1e;
     color: #fff;
     border: none;
     cursor: pointer;
     border-radius: 5px;
   }
   
-  li button:hover {
-    background-color: #0056b3;
-  }
   
   /* Styling for the empty cart message */
   #emptyCart p {
@@ -83,7 +81,7 @@
     margin-top: 20px;
   }
   
-  .total p {
+  .total  {
     margin-right: 20px;
     color: #333;
   }
@@ -92,15 +90,16 @@
   .checkout-btn {
     padding: 10px 20px;
     font-size: 16px;
-    background-color: #007bff;
+    background-color: #f68b1e;
     color: #fff;
     border: none;
     cursor: pointer;
     border-radius: 5px;
+    margin: 10px;
   }
   
   .clear-cart-btn:hover,
   .checkout-btn:hover {
-    background-color: #0056b3;
+    background-color: #f68b1e;
   }
   
