@@ -6,7 +6,12 @@ export  interface User{
     confirm_password:string
 
 } 
-
+export interface Slide{
+    id: string,
+    src: string,
+    // alt: string,
+    title: string
+  }
 export interface LoginUser{
     email:string,
     password:string,
