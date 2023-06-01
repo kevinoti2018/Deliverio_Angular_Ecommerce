@@ -23,7 +23,12 @@ export  interface User{
     confirm_password:string
 
 } 
-
+export interface Slide{
+    id: string,
+    src: string,
+    // alt: string,
+    title: string
+  }
 export interface LoginUser{
     email:string,
     password:string,
@@ -34,6 +39,11 @@ export  interface Category{
     image:string
     thumbImage: string,
      alt: string
+}
+export interface Category1{
+    ID:string,
+    NAME:string,
+    IMAGE:string
 }
 
 export  interface Product{

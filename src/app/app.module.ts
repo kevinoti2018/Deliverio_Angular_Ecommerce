@@ -1,6 +1,7 @@
-import { NgModule } from '@angular/core';
+import { NgModule} from '@angular/core';
+import { HttpClientModule } from '@angular/common/http'
 import { BrowserModule } from '@angular/platform-browser';
-import { NgImageSliderModule } from 'ng-image-slider';
+// import { NgImageSliderModule } from 'ng-image-slider';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { NavComponent } from './components/nav/nav.component';
@@ -14,11 +15,21 @@ import { FooterComponent } from './components/footer/footer.component';
 import { ContactUsComponent } from './components/contact-us/contact-us.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { CarouselModule } from 'ngx-owl-carousel-o';
 import { CarouselComponent } from './components/carousel/carousel.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+<<<<<<< HEAD
 import { HttpClientModule } from '@angular/common/http';
 
 
+=======
+
+// import { NzCollapseModule } from 'ng-zorro-antd/collapse';
+
+
+
+ 
+>>>>>>> bf4fdb523fbe423cfa5609cdfd224d0b6d6e4300
 
 @NgModule({
     declarations: [
@@ -29,20 +40,31 @@ import { HttpClientModule } from '@angular/common/http';
         RegisterComponent,
         CategoriesComponent,
         FooterComponent,
-        ContactUsComponent,
+       
     ],
     bootstrap: [AppComponent],
     imports: [
         BrowserModule,
         AppRoutingModule,
-        NgImageSliderModule,
+        // NgImageSliderModule,
         ReactiveFormsModule,
         FormsModule,
         NgbModule,
         CarouselComponent,
         ProductsComponent,
+<<<<<<< HEAD
         BrowserAnimationsModule,
         HttpClientModule,
+=======
+        ContactUsComponent,
+        // NzCollapseModule,
+        HttpClientModule,
+        CarouselModule,
+        BrowserAnimationsModule,
+    
+
+>>>>>>> bf4fdb523fbe423cfa5609cdfd224d0b6d6e4300
     ]
+        
 })
 export class AppModule { }
