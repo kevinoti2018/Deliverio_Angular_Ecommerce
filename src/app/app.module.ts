@@ -18,18 +18,8 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { CarouselModule } from 'ngx-owl-carousel-o';
 import { CarouselComponent } from './components/carousel/carousel.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-<<<<<<< HEAD
-import { HttpClientModule } from '@angular/common/http';
-
-
-=======
 
 // import { NzCollapseModule } from 'ng-zorro-antd/collapse';
-
-
-
- 
->>>>>>> bf4fdb523fbe423cfa5609cdfd224d0b6d6e4300
 
 @NgModule({
     declarations: [
@@ -52,10 +42,6 @@ import { HttpClientModule } from '@angular/common/http';
         NgbModule,
         CarouselComponent,
         ProductsComponent,
-<<<<<<< HEAD
-        BrowserAnimationsModule,
-        HttpClientModule,
-=======
         ContactUsComponent,
         // NzCollapseModule,
         HttpClientModule,
@@ -63,7 +49,6 @@ import { HttpClientModule } from '@angular/common/http';
         BrowserAnimationsModule,
     
 
->>>>>>> bf4fdb523fbe423cfa5609cdfd224d0b6d6e4300
     ]
         
 })
