@@ -43,6 +43,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
         CarouselComponent,
         ProductsComponent,
         ContactUsComponent,
+        ProductDetailComponent,
         // NzCollapseModule,
         HttpClientModule,
         CarouselModule,
