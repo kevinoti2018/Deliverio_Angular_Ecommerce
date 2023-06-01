@@ -1,17 +1,23 @@
 import { Injectable } from '@angular/core';
 import { Product } from 'src/Interfaces/Interfaces';
-import { productslist } from './ProductList';
+import { HttpClient } from '@angular/common/http';
+import { Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
 })
+export class ProductsService {
+  private baseurl = 'http://localhost:5000/products';
+  products: Product[] = [];
 
-export class ProductsService{
+  constructor(private http: HttpClient) { }
 
-  products:Product[]=productslist
-  constructor() { }
+  getallproducts() {
+    return this.http.get<Product[]>(`${this.baseurl}/getproducts`);
+  }
 
-  getallproducts(){
-    return this.products.slice(0,5)
+  getsingleproduct(productId:string):Observable<Product>{
+    return this.http.get<Product>(`${this.baseurl}/getproduct/${productId}`);
   }
 }
+

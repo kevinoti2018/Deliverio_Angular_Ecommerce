@@ -1,3 +1,20 @@
+export interface Slide{
+    id: string,
+    src: string,
+    title: string
+  }
+export interface Slide{
+
+    id: string,
+
+    src: string,
+
+    // alt: string,
+
+    title: string
+
+  }
+
 export  interface User{
     id:string,
     username:string,
@@ -30,7 +47,7 @@ export interface Category1{
 }
 
 export  interface Product{
-    category:string,
+    category_id:string,
     id:string,
     name:string,
     description:string,

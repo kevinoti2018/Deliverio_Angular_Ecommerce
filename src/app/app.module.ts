@@ -21,10 +21,6 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 // import { NzCollapseModule } from 'ng-zorro-antd/collapse';
 
-
-
- 
-
 @NgModule({
     declarations: [
         AppComponent,
@@ -47,6 +43,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
         CarouselComponent,
         ProductsComponent,
         ContactUsComponent,
+        ProductDetailComponent,
         // NzCollapseModule,
         HttpClientModule,
         CarouselModule,

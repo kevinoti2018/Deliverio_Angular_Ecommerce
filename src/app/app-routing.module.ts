@@ -12,6 +12,7 @@ import { RegisterComponent } from './components/register/register.component';
 import { ContactUsComponent } from './components/contact-us/contact-us.component';
 
 
+
 const routes:Routes=[
   {path:'',component:HeroComponent},
   {path:'login',component:LoginComponent},

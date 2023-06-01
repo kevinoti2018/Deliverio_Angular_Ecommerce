@@ -7,7 +7,6 @@
     <title>Checkout Page</title>
   </head>
   <body>
-    <div class="main">
       <div class="checkout-container">
         <div class="checkout">
          
@@ -21,8 +20,8 @@
               <label for="lastName">LastName</label><br />
               <input
                 type="text"
-                id="secondname"
-                placeholder="enter secondname"
+                id="lastName"
+                placeholder="enter lastName"
                 [(ngModel)]="lastName"
               />
             </div>
@@ -51,16 +50,16 @@
             <hr />
             <div class="cart-summary">
               <div class="cart-details">
-                <h4>Cart Subtotal:</h4>
-                <h4>Ksh {{cartTotal}}</h4>
+                <h5>Cart Total:</h5>
+                <h5>Ksh {{cartTotal}}</h5>
               </div>
               <div class="shipping-fee">
-                <h4>Shipping:</h4>
-                <h4>Ksh 0</h4>
+                <h5>Shipping:</h5>
+                <h5>Ksh 0</h5>
               </div>
               <div class="order-total">
-                <h4>Total:</h4>
-                <h4>ksh {{cartTotal}}</h4>
+                <h5>Total: </h5>
+                <h5>ksh {{cartTotal}}</h5>
               </div>
 
               <button (click)="placeOrder()">Place Order</button>
@@ -68,6 +67,13 @@
           </div>
         </div>
       </div>
-    </div>
   </body>
 </html>
+
+
+
+
+
+
+
+
