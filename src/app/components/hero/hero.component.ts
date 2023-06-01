@@ -1,5 +1,5 @@
 import { Component,OnInit } from '@angular/core';
-import { Category } from 'src/Interfaces/Interfaces';
+import {  Slide } from 'src/Interfaces/Interfaces';
 import { CategoryService } from 'src/app/services/categoryservices/category.service';
 
 
@@ -9,7 +9,7 @@ import { CategoryService } from 'src/app/services/categoryservices/category.serv
   styleUrls: ['./hero.component.css']
 })
 export class HeroComponent implements OnInit {
-  categories:Category[]=[]
+  categories:Slide[]=[]
   constructor(private categoryService:CategoryService){
 
   }

@@ -8,9 +8,9 @@ export  interface User{
 } 
 export interface Slide{
     id: string,
-    src: string,
+    image: string,
     // alt: string,
-    title: string
+    name: string
   }
 export interface LoginUser{
     email:string,

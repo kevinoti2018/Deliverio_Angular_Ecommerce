@@ -1,7 +1,7 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { OwlOptions } from 'ngx-owl-carousel-o';
 import { Slide } from 'src/Interfaces/Interfaces';
-
+import { CategoryService } from 'src/app/services/categoryservices/category.service';
 
 @Component({
   selector: 'app-categories',
@@ -10,9 +10,10 @@ import { Slide } from 'src/Interfaces/Interfaces';
   // standalone:true
 })
 
-export class CategoriesComponent {
+export class CategoriesComponent implements OnInit {
+
   customOptions: OwlOptions = {
-    loop: true,
+    loop: false,
     mouseDrag: true,
     touchDrag: true,
     pullDrag: false,
@@ -35,43 +36,50 @@ export class CategoriesComponent {
     },
     nav: true
   }
-  
   slidesStore: Slide[] = [
-    {
-      id: '1',
-      src: '/assets/images/camera1.png',
-      // alt: 'Slide 1',
-      title: 'Slide 1 Title'
-    },
-    {
-      id: '2',
-      src: '/assets/images/camera1.png',
-      // alt: 'Slide 2',
-      title: 'Slide 2 Title'
-    },
-    {
-      id: '2',
-      src: '/assets/images/camera1.png',
-      // alt: 'Slide 2',
-      title: 'Slide 2 Title'
-    },
-    {
-      id: '2',
-      src: '/assets/images/camera1.png',
-      // alt: 'Slide 2',
-      title: 'Slide 5 Title'
-    },
-    {
-      id: '2',
-      src: '/assets/images/camera1.png',
-      // alt: 'Slide 2',
-      title: 'Slide 4 Title'
-    },
-    {
-      id: '2',
-      src: '/assets/images/camera1.png',
-      // alt: 'Slide 2',
-      title: 'Slide 3 Title'
-    },
+    // {
+    //   id: '1',
+    //   image: '/assets/images/camera1.png',
+    //   // alt: 'Slide 1',
+    //   name: 'Slide 1 name'
+    // },
+    // {
+    //   id: '2',
+    //   image: '/assets/images/camera1.png',
+    //   // alt: 'Slide 2',
+    //   name: 'Slide 2 name'
+    // },
+    // {
+    //   id: '2',
+    //   image: '/assets/images/camera1.png',
+    //   // alt: 'Slide 2',
+    //   name: 'Slide 2 name'
+    // },
+    // {
+    //   id: '2',
+    //   image: '/assets/images/camera1.png',
+    //   // alt: 'Slide 2',
+    //   name: 'Slide 5 name'
+    // },
+    // {
+    //   id: '2',
+    //   image: '/assets/images/camera1.png',
+    //   // alt: 'Slide 2',
+    //   name: 'Slide 4 name'
+    // },
+    // {
+    //   id: '2',
+    //   image: '/assets/images/camera1.png',
+    //   // alt: 'Slide 2',
+    //   name: 'Slide 3 name'
+    // },
   ];
+  constructor(private categoryService:CategoryService){
+
+  }
+  ngOnInit(): void {
+    this.slidesStore = this.categoryService.getCategory()
+  }
+  
+ 
 }
