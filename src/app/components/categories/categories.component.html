@@ -1,10 +1,13 @@
 <div class="caro">
-  <h2>Browse By Categories</h2>
+  <div class="top">
+    <h2>Browse By Categories</h2>
+  </div>
+  
   <owl-carousel-o [options]="customOptions">
     <ng-container *ngFor="let slide of slidesStore">
-      <ng-template carouselSlide [id]="slide.id">
-        <img [src]="slide.src" [alt]="slide.title" [title]="slide.title" class="carousel-image" style="width: 5rem;">
-        <p>{{slide.title}}</p>
+      <ng-template carouselSlide [id]="slide.ID">
+        <img [src]="slide.IMAGE" [alt]="slide.NAME" [name]="slide.NAME" class="carousel-image" style="width: 5rem; height: 5rem;">
+        <a href=""><p>{{slide.NAME}}</p></a>
       </ng-template>
     </ng-container>
   </owl-carousel-o>
@@ -16,14 +19,25 @@
       box-shadow:  rgba(0, 0, 0, 0.24) 0px 3px 8px;
       width: 100%;
       border-radius: .5rem;
-      background-color: #FCF0E4;
+      background-color:#FCF0E4;
       margin: .5rem 0;
+    }
+    .top{
+      width: 100%;
+      padding: 0.5rem;
+      background-color:#013D29;;
+      margin-bottom: 1rem;
     }
     h2{
       text-align: center;
       width: 100%;
       padding: 0.5rem;
-      background-color: #fff;
+      /* background-color: #fff; */
+      color: white;
+    }
+    a{
+      text-decoration: none;
+      padding: 0.5rem; 
     }
   </style>
   
