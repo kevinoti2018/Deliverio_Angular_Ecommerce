@@ -2,7 +2,7 @@
  <div class="forms">
   <h2>Register User</h2>
   
-  <form class="form" [formGroup]="registerForm">
+  <form class="form" (ngSubmit)="createUser()"[formGroup]="registerForm">
     <input type="text" formControlName="username" placeholder="Enter Your Username">
     <div *ngIf="registerForm.get('username')?.invalid && (registerForm.get('username')?.dirty || registerForm.get('username')?.touched)">
       <p class="err" *ngIf="registerForm.get('username')?.errors?.['required']">Username is required.</p>

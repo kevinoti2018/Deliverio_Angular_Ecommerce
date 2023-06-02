@@ -1,33 +1,33 @@
 export interface Slide{
     id: string,
-    src: string,
-    title: string
+    image: string,
+    name: string
   }
-export interface Slide{
+// export interface Slide{
 
-    id: string,
+//     id: string,
 
-    src: string,
+//     name: string,
 
-    // alt: string,
+//     // alt: string,
 
-    title: string
+//     image: string
 
-  }
+//   }
 
 export  interface User{
-    id:string,
+    // id:string,
     username:string,
     email:string,
     password:string,
-    confirm_password:string
+   
 
 } 
 export interface Slide{
     id: string,
-    src: string,
+    image: string,
     // alt: string,
-    title: string
+    name: string
   }
 export interface LoginUser{
     email:string,

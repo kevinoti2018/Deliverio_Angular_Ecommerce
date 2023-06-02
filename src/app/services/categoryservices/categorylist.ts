@@ -1,6 +1,6 @@
-import { Category } from "src/Interfaces/Interfaces";
+import { Category, Slide } from "src/Interfaces/Interfaces";
 
-export const sampleCategories: Category[] = [
+export const sampleCategories: Slide[] = [
     {
       id: '1',
       name: 'Electronics',
