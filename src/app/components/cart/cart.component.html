@@ -1,31 +1,33 @@
-<div *ngIf="cartItems.length > 0; else emptyCart">
-    <h2>Your Cart</h2>
-    <ul>
-      <li *ngFor="let item of cartItems">
-        <div>
-          <img [src]="item.product.images" [alt]="item.product.name" width="100">
-          <h3>{{ item.product.name }}</h3>
-          <p>Price: ${{ item.product.price }}</p>
-          
-          <button (click)="removeFromCart(item.product)">-</button>
-          <p>{{ item.quantity }}</p>
-          <button (click)="addToCart(item.product)">+</button>
-        </div>
-      </li>
-    </ul>
-    <p class="total">Total: ${{ cartTotal }}</p>
-    <button class="clear-cart-btn" (click)="clearCart()">Clear Cart</button>
-    <button class="checkout-btn " (click)="goToOrderForm()">Chekout</button>
- 
-
-  </div>
-  
-  <ng-template #emptyCart >
-    <div class="empty">
-      <p>Your cart is empty.</p>
-      <a routerlink="/hero"> <button> shop now</button></a>
-   
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cart</title>
+</head>
+<body>
+  <div *ngFor="let item of cartItems">
+    <div class="cart-card">
+      <p>Product ID: {{ item.product_id }}</p>
+      <p>Product Name: {{ item.product?.name }}</p>
+      <p>Quantity: {{ item.quantity }}</p>
+      <p>Subtotal: {{ item.subtotal }}</p>
     </div>
-    
-  </ng-template>
+    <p>Total:{{cartTotal}}</p>
   
+    <!-- Add more HTML elements as needed for other item details -->
+  </div>
+  <button class="clear-cart-btn" (click)="clearCart()">Clear Cart</button>
+  <button class="checkout-btn " (click)="goToOrderForm()">Chekout</button>
+
+  <style>
+    .cart-card{
+      display: flex;
+    }
+  </style>
+</body>
+</html>
+  
+
+

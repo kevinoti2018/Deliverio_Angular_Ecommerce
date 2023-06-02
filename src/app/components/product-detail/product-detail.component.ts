@@ -33,7 +33,13 @@ export class ProductDetailComponent implements OnInit {
     })
   }
   
-  addToCart(product: Product): void {
-    this.cartService.addToCart(product);
+  addToCart(productId: string): void {
+    this.cartService.addToCart(productId).subscribe(()=>{
+      console.log("added to cart")
+    },
+    (error)=>{
+      console.log(error.message)
+    }
+    )
   }
 }

@@ -1,5 +1,7 @@
+import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { CartItem, Product } from 'src/Interfaces/Interfaces';
+import { Observable } from 'rxjs';
+import { CART, Cart, CartItem, Product } from 'src/Interfaces/Interfaces';
 // Update the import path
 
 @Injectable({
@@ -9,27 +11,25 @@ export class CartService {
   private cartItems: CartItem[] = [];
   private cartTotal: number = 0;
   private cartid!: number;
+  private Cart:CART[]=[]
 
-  constructor() { }
+  private carturl='http://localhost:5000/cart'
+
+  constructor(private http:HttpClient) { }
  
   //Adds Product Into Cart
-  addToCart(product: Product): void {
-    const existingItem = this.cartItems.find(item => item.product.id === product.id);
-
-    if (existingItem) {
-      // Product already exists in the cart, increase the quantity
-      existingItem.quantity++;
-    } else {
-      // Product doesn't exist in the cart, add it as a new cart item
-      this.cartItems.push({
-        product, quantity: 1,
-        id:1,
-      });
-    }
-
-    this.updateCartTotal();
-    console.log(this.cartItems);
+  addToCart(productId:string):Observable<CART>{
+    let payload={productId}
+    return this.http.post<CART>(`${this.carturl}/add_to_cart/${productId}`, payload);
   }
+
+ 
+  viewCart(): Observable<CART[]> {
+    return this.http.get<CART[]>(`${this.carturl}/view_cart`);
+  }
+  
+
+
 
   removeFromCart(product: Product): void {
     const index = this.cartItems.findIndex(item => item.product.id === product.id);
@@ -47,6 +47,8 @@ export class CartService {
 
     this.updateCartTotal();
   }
+  
+ 
 
   getCartItems(): CartItem[] {
     return this.cartItems;

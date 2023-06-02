@@ -55,9 +55,20 @@ export  interface Product{
     price:number
 }
 
+export interface CART {
+  cart_id:string;
+  product_id:string;
+  quantity:number;
+  price:number;
+  subtotal:number;
+  total:number;
+  product?:Product;
+}
+
+
+
 export  interface Cart{
     id:string,
-    product_id:string,
     subtotal:number
 }
 
