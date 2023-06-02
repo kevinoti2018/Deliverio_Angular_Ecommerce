@@ -70,8 +70,9 @@ export class CategoryService {
   constructor(private httpClient:HttpClient) { 
     
   }
-  getCategory1():Observable<Category1>{
-    return this.httpClient.get<Category1>('localhost:5000/products/getcategories')
+  private baseurl = 'http://localhost:5000/products';
+  getCategory1():Observable<Category1[]>{
+    return this.httpClient.get<Category1[]>(`${this.baseurl}/getcategories`)
   }
   getCategory(){
     return this.categories

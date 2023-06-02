@@ -1,3 +1,4 @@
+import { Category1 } from './../../../Interfaces/Interfaces';
 import { Component, OnInit } from '@angular/core';
 import { OwlOptions } from 'ngx-owl-carousel-o';
 import { Slide } from 'src/Interfaces/Interfaces';
@@ -36,7 +37,7 @@ export class CategoriesComponent implements OnInit {
     },
     nav: true
   }
-  slidesStore: Slide[] = [
+  slidesStore: Category1[] = [
     // {
     //   id: '1',
     //   image: '/assets/images/camera1.png',
@@ -77,9 +78,14 @@ export class CategoriesComponent implements OnInit {
   constructor(private categoryService:CategoryService){
 
   }
+
   ngOnInit(): void {
-    this.slidesStore = this.categoryService.getCategory()
+   this.getCategories()
   }
-  
+  getCategories(){
+    this.categoryService.getCategory1().subscribe(
+      (response)=> this.slidesStore = response
+    )
+  }
  
 }
