@@ -1,14 +1,13 @@
 import { Category1 } from './../../../Interfaces/Interfaces';
 import { Component, OnInit } from '@angular/core';
 import { OwlOptions } from 'ngx-owl-carousel-o';
-import { Slide } from 'src/Interfaces/Interfaces';
 import { CategoryService } from 'src/app/services/categoryservices/category.service';
+import { Slide } from './../../../Interfaces/Interfaces';
 
 @Component({
   selector: 'app-categories',
   templateUrl: './categories.component.html',
-  styleUrls: ['./categories.component.css'],
-  // standalone:true
+  styleUrls: ['./categories.component.css']
 })
 
 export class CategoriesComponent implements OnInit {
@@ -37,44 +36,49 @@ export class CategoriesComponent implements OnInit {
     },
     nav: true
   }
-  slidesStore: Slide[] = [
-    {
-      id: '1',
-      image: '/assets/images/camera1.png',
-      // alt: 'Slide 1',
-      name: 'Slide 1 name'
-    },
-    {
-      id: '2',
-      image: '/assets/images/camera1.png',
-      // alt: 'Slide 2',
-      name: 'Slide 2 name'
-    },
-    {
-      id: '2',
-      image: '/assets/images/camera1.png',
-      // alt: 'Slide 2',
-      name: 'Slide 2 name'
-    },
-    {
-      id: '2',
-      image: '/assets/images/camera1.png',
-      // alt: 'Slide 2',
-      name: 'Slide 5 name'
-    },
-    {
-      id: '2',
-      image: '/assets/images/camera1.png',
-      // alt: 'Slide 2',
-      name: 'Slide 4 name'
-    },
-    {
-      id: '2',
-      image: '/assets/images/camera1.png',
-      // alt: 'Slide 2',
-      name: 'Slide 3 name'
-    },
-  ];
+
+  slidesStore: Category1[] = []
+    
+
+  // slidesStore: Slide[] = [
+  //   {
+  //     id: '1',
+  //     image: '/assets/images/camera1.png',
+  //     // alt: 'Slide 1',
+  //     name: 'Slide 1 name'
+  //   },
+  //   {
+  //     id: '2',
+  //     image: '/assets/images/camera1.png',
+  //     // alt: 'Slide 2',
+  //     name: 'Slide 2 name'
+  //   },
+  //   {
+  //     id: '2',
+  //     image: '/assets/images/camera1.png',
+  //     // alt: 'Slide 2',
+  //     name: 'Slide 2 name'
+  //   },
+  //   {
+  //     id: '2',
+  //     image: '/assets/images/camera1.png',
+  //     // alt: 'Slide 2',
+  //     name: 'Slide 5 name'
+  //   },
+  //   {
+  //     id: '2',
+  //     image: '/assets/images/camera1.png',
+  //     // alt: 'Slide 2',
+  //     name: 'Slide 4 name'
+  //   },
+  //   {
+  //     id: '2',
+  //     image: '/assets/images/camera1.png',
+  //     // alt: 'Slide 2',
+  //     name: 'Slide 3 name'
+  //   },
+
+  
   constructor(private categoryService:CategoryService){
 
   }
@@ -83,7 +87,9 @@ export class CategoriesComponent implements OnInit {
    this.getCategories()
   }
   getCategories(){
-   this.slidesStore= this.categoryService.getCategory()
+   this.categoryService.getCategory1().subscribe(
+    (response)=> this.slidesStore = response
+   )
   }
 
 }

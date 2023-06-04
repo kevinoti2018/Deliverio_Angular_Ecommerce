@@ -1,18 +1,16 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 import { UserService } from 'src/app/services/user.service';
 import { LoginUser } from 'src/Interfaces/Interfaces';
-import { Observable } from 'rxjs';
-import { Route, Router } from '@angular/router';
-import { AuthService } from 'src/app/services/auth.service';
-
+import { AuthService } from '../services/auth.service';
 @Component({
-  selector: 'app-login',
-  templateUrl: './login.component.html',
-  styleUrls: ['./login.component.css']
+  selector: 'app-reset-password',
+  templateUrl: './reset-password.component.html',
+  styleUrls: ['./reset-password.component.css']
 })
-export class LoginComponent implements OnInit {
-  loginForm!: FormGroup;
+export class ResetPasswordComponent implements OnInit {
+  resetForm!: FormGroup;
 
   constructor(
     private fb: FormBuilder,
@@ -22,17 +20,17 @@ export class LoginComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
-    this.loginForm = this.fb.group({
+    this.resetForm = this.fb.group({
       email: ['', [Validators.required, Validators.email]],
       password: ['', Validators.required]
     });
+    
   }
-
   submit(): void {
-    if (this.loginForm.valid) {
+    if (this.resetForm.valid) {
       const loginUser: LoginUser = {
-        email: this.loginForm.get('email')?.value,
-        password: this.loginForm.get('password')?.value
+        email: this.resetForm.get('email')?.value,
+        password: this.resetForm.get('password')?.value
       };
 
       this.userService.loginUser(loginUser).subscribe(
@@ -49,4 +47,5 @@ export class LoginComponent implements OnInit {
       );
     }
   }
+
 }

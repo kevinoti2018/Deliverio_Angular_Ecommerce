@@ -1,3 +1,4 @@
+import { ProductCategoryComponent } from './product-category/product-category.component';
 import { LoginComponent } from './components/login/login.component';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
@@ -18,6 +19,7 @@ const routes:Routes=[
   {path:'login',component:LoginComponent},
   {path:'register',component:RegisterComponent},
   {path:'products',component:ProductsComponent},
+  {path:'products/:categoryId',component:ProductCategoryComponent},
   {path:'help',component:ContactUsComponent},
   {path:'cart',component:CartComponent},
   {path:'checkout/:id',component:OrderComponent},
