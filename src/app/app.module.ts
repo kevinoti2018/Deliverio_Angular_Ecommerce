@@ -1,4 +1,4 @@
-import { NgModule} from '@angular/core';
+import { NgModule, isDevMode} from '@angular/core';
 import { HttpClientModule } from '@angular/common/http'
 import { BrowserModule } from '@angular/platform-browser';
 // import { NgImageSliderModule } from 'ng-image-slider';
@@ -22,6 +22,7 @@ import { StoreModule } from '@ngrx/store';
 import { EffectsModule } from '@ngrx/effects';
 import { productreducer } from './components/store/reducers/products.reducer';
 import { ProductEffects } from './components/store/effects/products.effects';
+import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 
 // import { NzCollapseModule } from 'ng-zorro-antd/collapse';
 
@@ -54,6 +55,7 @@ import { ProductEffects } from './components/store/effects/products.effects';
         BrowserAnimationsModule,
         StoreModule.forRoot({products:productreducer},{}),
         EffectsModule.forRoot([ProductEffects]),
+        StoreDevtoolsModule.instrument({ maxAge: 25, logOnly: !isDevMode() }),
     
 
     ]

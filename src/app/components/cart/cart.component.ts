@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { CART, CartItem, Product } from 'src/Interfaces/Interfaces';
+import { CART, Product } from 'src/Interfaces/Interfaces';
 import { CartService } from 'src/app/services/cartservice/cart.service';
 import { Router, RouterModule } from '@angular/router';
 import { ProductsService } from 'src/app/services/productservices/products.service';
@@ -15,6 +15,7 @@ import { ProductsService } from 'src/app/services/productservices/products.servi
 export class CartComponent implements OnInit{
   cartItems!: CART[];
   products: Product[] = [];
+  Subtotal:number=0;
   cartTotal: number = 0;
   cartid!:number;
 
@@ -35,16 +36,19 @@ export class CartComponent implements OnInit{
     this.cartService.viewCart().subscribe(
       (data: CART[]) => {
         this.cartItems = data;
+        console.log(this.cartItems)
       
         // Extract product information based on product_id
         this.cartItems.forEach((cartItem) => {
           const product = this.products.find((p) => p.id === cartItem.product_id);
           if (product) {
             cartItem.product = product;
+
+            console.log(product)
           }
         });
-        this.cartTotal = this.cartItems.reduce((acc, cartItem) => acc + cartItem.subtotal, 0);
-        console.log(this.cartTotal)
+        // this.cartTotal = this.cartItems.reduce((acc, cartItem) => acc + cartItem.subtotal, 0);
+        // console.log(this.cartTotal)
 
       },
       (error) => {
@@ -53,19 +57,21 @@ export class CartComponent implements OnInit{
     );
   }
   
-
-
   addToCart(productId: string): void {
-    this.cartService.addToCart(productId).subscribe(()=>{
-      console.log('product added in cart')
-    },
-    (error)=>{
-      console.log(error)
-      }
-    )
+    this.cartService.addToCart(productId)
+  }
+
+  // addToCart(productId: string): void {
+  //   this.cartService.addToCart(productId).subscribe(()=>{
+  //     console.log('product added in cart')
+  //   },
+  //   (error)=>{
+  //     console.log(error)
+  //     }
+  //   )
  
 
-  }
+  // }
   removeFromCart(product: Product): void {
     this.cartService.removeFromCart(product);
     this.cartTotal = this.cartService.getCartTotal();

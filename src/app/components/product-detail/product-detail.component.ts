@@ -1,9 +1,11 @@
 import { CommonModule } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, RouterModule } from '@angular/router';
+import { Store } from '@ngrx/store';
 import { Product } from 'src/Interfaces/Interfaces';
 import { CartService } from 'src/app/services/cartservice/cart.service';
 import { ProductsService } from 'src/app/services/productservices/products.service';
+import { selectAllProducts } from '../store/selectors/products.selector';
 
 
 @Component({
@@ -14,10 +16,9 @@ import { ProductsService } from 'src/app/services/productservices/products.servi
   imports:[CommonModule,RouterModule]
 })
 export class ProductDetailComponent implements OnInit {
-   productId!:string;
-   product!: Product;
+   product!: any;
 
-   constructor(private route:ActivatedRoute,private cartService:CartService,private productservice:ProductsService){
+   constructor(private route:ActivatedRoute,private cartService:CartService,private productservice:ProductsService, private store:Store){
 
    }
 
@@ -25,10 +26,15 @@ export class ProductDetailComponent implements OnInit {
 
   ngOnInit(): void {
     this.route.params.subscribe((param)=>{
-      this.productId=param['id']
-      this.productservice.getsingleproduct(this.productId).subscribe((product:Product)=>{
-        this.product=product;
-        console.log(this.product)})
+       this.store.select(selectAllProducts).subscribe((products)=>{
+        console.log(products)
+          this.product=products.find(p=>p.id == param['id'])
+          console.log(this.product)
+       })
+
+      // this.productservice.getsingleproduct(this.productId).subscribe((product:Product)=>{
+      //   this.product=product;
+      //   console.log(this.product)})
     })
   }
   
