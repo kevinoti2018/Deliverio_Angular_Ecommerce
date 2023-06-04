@@ -54,6 +54,7 @@ import { ProductEffects } from './components/store/effects/products.effects';
         BrowserAnimationsModule,
         StoreModule.forRoot({products:productreducer},{}),
         EffectsModule.forRoot([ProductEffects]),
+        StoreModule.forRoot({}, {}),
     
 
     ]
