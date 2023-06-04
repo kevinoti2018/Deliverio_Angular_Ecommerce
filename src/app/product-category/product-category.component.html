@@ -1,21 +1,54 @@
-<div  *ngFor="let product of products" class="products">
-<div class="product">
-    <p>{{product.name}}</p>
-    <img [src]="product.images" alt="">
-</div>
+<div class="products">
+    <div  *ngFor="let product of products" >
+        <div class="product">
+          
+            <img [src]="product.images" alt="" style="width: 5rem; height: 5rem;">
+            <p>{{product.name}}</p>
+            <button [routerLink]="['/product',product.id]"> add to cart</button>
+        </div>
+        </div>
 </div>
 
 <style>
+    :root{
+    --primary:#013D29 ;
+    --shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    --secondary:#f68b1e;
+    --tertiary: #FCF0E4;
+    --container-color: #fff;
+    --secondary-container:#F6F6F6;
+}
     .products{
         display: flex;
-        background-color: red;
+        background-color:#FCF0E4;
+        width: 100%;
+        justify-content: space-evenly;
+        padding: 0.5rem;
+        /* align-items: center; */
+        height: 100%;
+        flex-wrap: wrap;
+        border-radius: .5rem;
     }
     .product{
-        width: 5rem;
+        width: 9rem;
+        border-radius: .5rem;
         background-color: #fff;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding: 0.5rem;
     }
-     image{
-        width: 4rem;
-        height: 4rem;
+    button{
+        background-color: #013D29;
+        color:white;
+        border-radius: .5rem;
+        padding: .5rem;
+        border:none;
+
     }
+    button:hover{
+        background-color: #f68b1e;
+    }
+    
 </style>

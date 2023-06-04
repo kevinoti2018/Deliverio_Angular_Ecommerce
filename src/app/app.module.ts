@@ -23,6 +23,7 @@ import { EffectsModule } from '@ngrx/effects';
 import { productreducer } from './components/store/reducers/products.reducer';
 import { ProductEffects } from './components/store/effects/products.effects';
 import { ProductCategoryComponent } from './product-category/product-category.component';
+import { ResetPasswordComponent } from './reset-password/reset-password.component';
 
 // import { NzCollapseModule } from 'ng-zorro-antd/collapse';
 
@@ -36,6 +37,7 @@ import { ProductCategoryComponent } from './product-category/product-category.co
         CategoriesComponent,
         FooterComponent,
         ProductCategoryComponent,
+        ResetPasswordComponent,
        
     ],
     bootstrap: [AppComponent],
