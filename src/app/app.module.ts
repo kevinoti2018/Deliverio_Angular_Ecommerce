@@ -18,6 +18,10 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { CarouselModule } from 'ngx-owl-carousel-o';
 import { CarouselComponent } from './components/carousel/carousel.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { StoreModule } from '@ngrx/store';
+import { EffectsModule } from '@ngrx/effects';
+import { productreducer } from './components/store/reducers/products.reducer';
+import { ProductEffects } from './components/store/effects/products.effects';
 
 // import { NzCollapseModule } from 'ng-zorro-antd/collapse';
 
@@ -48,6 +52,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
         HttpClientModule,
         CarouselModule,
         BrowserAnimationsModule,
+        StoreModule.forRoot({products:productreducer},{}),
+        EffectsModule.forRoot([ProductEffects]),
     
 
     ]

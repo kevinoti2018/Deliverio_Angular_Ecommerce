@@ -82,7 +82,7 @@ export class CartComponent implements OnInit{
   //   this.router.navigate(['/checkout', cartId ]);
   // }
   goToOrderForm(): void {
-    const cartId: number = this.cartService.generateCartId(); // Get the cartId dynamically from the cart service
+    const cartId: number = this.cartService.generateCartId();
     this.router.navigate(['/checkout', cartId]);
   }
 

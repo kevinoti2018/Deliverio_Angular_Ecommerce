@@ -37,43 +37,43 @@ export class CategoriesComponent implements OnInit {
     },
     nav: true
   }
-  slidesStore: Category1[] = [
-    // {
-    //   id: '1',
-    //   image: '/assets/images/camera1.png',
-    //   // alt: 'Slide 1',
-    //   name: 'Slide 1 name'
-    // },
-    // {
-    //   id: '2',
-    //   image: '/assets/images/camera1.png',
-    //   // alt: 'Slide 2',
-    //   name: 'Slide 2 name'
-    // },
-    // {
-    //   id: '2',
-    //   image: '/assets/images/camera1.png',
-    //   // alt: 'Slide 2',
-    //   name: 'Slide 2 name'
-    // },
-    // {
-    //   id: '2',
-    //   image: '/assets/images/camera1.png',
-    //   // alt: 'Slide 2',
-    //   name: 'Slide 5 name'
-    // },
-    // {
-    //   id: '2',
-    //   image: '/assets/images/camera1.png',
-    //   // alt: 'Slide 2',
-    //   name: 'Slide 4 name'
-    // },
-    // {
-    //   id: '2',
-    //   image: '/assets/images/camera1.png',
-    //   // alt: 'Slide 2',
-    //   name: 'Slide 3 name'
-    // },
+  slidesStore: Slide[] = [
+    {
+      id: '1',
+      image: '/assets/images/camera1.png',
+      // alt: 'Slide 1',
+      name: 'Slide 1 name'
+    },
+    {
+      id: '2',
+      image: '/assets/images/camera1.png',
+      // alt: 'Slide 2',
+      name: 'Slide 2 name'
+    },
+    {
+      id: '2',
+      image: '/assets/images/camera1.png',
+      // alt: 'Slide 2',
+      name: 'Slide 2 name'
+    },
+    {
+      id: '2',
+      image: '/assets/images/camera1.png',
+      // alt: 'Slide 2',
+      name: 'Slide 5 name'
+    },
+    {
+      id: '2',
+      image: '/assets/images/camera1.png',
+      // alt: 'Slide 2',
+      name: 'Slide 4 name'
+    },
+    {
+      id: '2',
+      image: '/assets/images/camera1.png',
+      // alt: 'Slide 2',
+      name: 'Slide 3 name'
+    },
   ];
   constructor(private categoryService:CategoryService){
 
@@ -83,9 +83,7 @@ export class CategoriesComponent implements OnInit {
    this.getCategories()
   }
   getCategories(){
-    this.categoryService.getCategory1().subscribe(
-      (response)=> this.slidesStore = response
-    )
+   this.slidesStore= this.categoryService.getCategory()
   }
- 
+
 }

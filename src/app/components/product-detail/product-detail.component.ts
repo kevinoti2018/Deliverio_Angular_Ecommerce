@@ -28,8 +28,7 @@ export class ProductDetailComponent implements OnInit {
       this.productId=param['id']
       this.productservice.getsingleproduct(this.productId).subscribe((product:Product)=>{
         this.product=product;
-        console.log(this.product)
-      })
+        console.log(this.product)})
     })
   }
   

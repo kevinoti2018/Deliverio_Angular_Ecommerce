@@ -7,6 +7,7 @@
   <title>Cart</title>
 </head>
 <body>
+ <div *ngIf="cartItems.length">
   <div *ngFor="let item of cartItems">
     <div class="cart-card">
       <p>Product ID: {{ item.product_id }}</p>
@@ -18,6 +19,7 @@
   
     <!-- Add more HTML elements as needed for other item details -->
   </div>
+ </div>
   <button class="clear-cart-btn" (click)="clearCart()">Clear Cart</button>
   <button class="checkout-btn " (click)="goToOrderForm()">Chekout</button>
 

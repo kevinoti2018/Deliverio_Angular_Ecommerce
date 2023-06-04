@@ -3,10 +3,10 @@
         <h3>Top Deals| Deals up to 40% off</h3>
         <p>See All ></p>
     </div>
-    <div class="bottom" >
-        <div class="box" *ngFor="let product of products">
+    <div class="bottom">
+        <div class="box" *ngFor="let product of products$ | async">
             <div class="tops">
-                <img src="{{product.images}}"/>
+                <img src="{{product.images}}" style="object-fit: contain;"/>
                 <p><a [routerLink]="['/product',product.id]">{{product.name}}</a></p>
                 
             </div>
@@ -20,13 +20,15 @@
         <h2>Deals You cant miss</h2>
     </div>
     <div class="bottom">
-        <div class="box"></div>
-         <div class="box"></div>
-         <div class="box"></div>
-         <div class="box"></div>
-        <div class="box"></div>
-        <div class="box"></div>   
+        <div class="box"*ngFor="let product of products$ | async" >
+           <a [routerLink]="['/product',product.id]" > <img src="{{product.images}}" height="200px" /></a>
+        </div>
     </div>
+
+
+
+
+
    </div>
 
 <div class="home-deals">
@@ -66,7 +68,7 @@
     </div>
 </div>
 </div>
-<div class="electronics">
+<!-- <div class="electronics">
 <div class="top">
     <h2>Electronics</h2>
 </div>
@@ -75,4 +77,4 @@
     <div class="box"></div>
     <div class="box"></div>
 </div>
-</div>
+</div> -->
