@@ -1,14 +1,12 @@
 import { Category1 } from './../../../Interfaces/Interfaces';
 import { Component, OnInit } from '@angular/core';
 import { OwlOptions } from 'ngx-owl-carousel-o';
-import { Slide } from 'src/Interfaces/Interfaces';
 import { CategoryService } from 'src/app/services/categoryservices/category.service';
 
 @Component({
   selector: 'app-categories',
   templateUrl: './categories.component.html',
-  styleUrls: ['./categories.component.css'],
-  // standalone:true
+  styleUrls: ['./categories.component.css']
 })
 
 export class CategoriesComponent implements OnInit {

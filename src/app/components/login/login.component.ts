@@ -4,6 +4,7 @@ import { UserService } from 'src/app/services/user.service';
 import { LoginUser } from 'src/Interfaces/Interfaces';
 import { Observable } from 'rxjs';
 import { Route, Router } from '@angular/router';
+import { AuthService } from 'src/app/services/auth.service';
 
 @Component({
   selector: 'app-login',
@@ -16,7 +17,8 @@ export class LoginComponent implements OnInit {
   constructor(
     private fb: FormBuilder,
     private userService: UserService,
-    private Route:Router
+    private Route:Router,
+    private authService:AuthService
   ) {}
 
   ngOnInit(): void {
@@ -34,9 +36,10 @@ export class LoginComponent implements OnInit {
       };
 
       this.userService.loginUser(loginUser).subscribe(
+      
         (response) => {
           console.log('User logged in:', response);
-          
+          this.authService.login(response)
           this.Route.navigateByUrl('')
         },
         (error:any) => {

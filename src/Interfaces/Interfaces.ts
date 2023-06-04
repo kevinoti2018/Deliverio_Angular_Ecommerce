@@ -14,7 +14,16 @@ export interface Slide{
 //     image: string
 
 //   }
+export interface LogUserSuccess{
+    token:string
+    role:string
+    message:string
+    username:string
+}
 
+export interface UserSuccess{
+    message:string
+}
 export  interface User{
     // id:string,
     username:string,

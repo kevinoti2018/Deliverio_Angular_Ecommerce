@@ -16,7 +16,7 @@ export class HeroComponent implements OnInit {
 
   ngOnInit(): void {
     this.getCategories()
-    // console.log(this.categories)
+   
   }
   getCategories(){
     this.categoryService.getCategory1().subscribe(

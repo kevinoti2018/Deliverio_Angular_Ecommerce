@@ -3,8 +3,6 @@
         <a routerLink="">
             <img src="../assets/images/logo.png" />
         </a>
-       
-        <!-- <a routerLink="">Home</a> -->
     </div>
     <div class="search">
         <input type="search" name="" id="" placeholder="Search products, brands and categories">
@@ -16,8 +14,13 @@
        
         <p><a routerLink="/help">Help</a></p>
         <p><a [routerLink]="'./cart'">Cart</a></p>
-        <p> <a routerLink="/register">
+        <p> <a routerLink="/register" *ngIf="!authService.isLoggedIn()">
             <button>signup</button>
         </a></p>
+        <a  *ngIf="authService.isLoggedIn()"
+        (click)="authService.logout()"
+        >
+        <button>Logout</button>
+    </a>
     </div>
 </div>
