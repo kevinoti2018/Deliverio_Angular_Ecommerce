@@ -1,8 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { CartItem, Product } from 'src/Interfaces/Interfaces';
+import { CART, CartItem, Product } from 'src/Interfaces/Interfaces';
 import { CartService } from 'src/app/services/cartservice/cart.service';
 import { Router, RouterModule } from '@angular/router';
+import { ProductsService } from 'src/app/services/productservices/products.service';
 
 @Component({
   selector: 'app-cart',
@@ -12,25 +13,61 @@ import { Router, RouterModule } from '@angular/router';
   styleUrls: ['./cart.component.css'],
 })
 export class CartComponent implements OnInit{
-  cartItems: CartItem[] = [];
+  cartItems!: CART[];
+  products: Product[] = [];
   cartTotal: number = 0;
   cartid!:number;
 
-  constructor(private cartService: CartService,private router:Router) { }
+  constructor(private cartService: CartService,private router:Router,private productService:ProductsService) { }
     
-
   ngOnInit(): void {
-    this.cartItems = this.cartService.getCartItems();
-    this.cartTotal = this.cartService.getCartTotal();
+    
+    this.productService.getallproducts().subscribe(
+      (response: Product[]) => {
+        this.products = response;
+      },
+      (error) => {
+        console.error(error);
+      }
+    );
+
+
+    this.cartService.viewCart().subscribe(
+      (data: CART[]) => {
+        this.cartItems = data;
+      
+        // Extract product information based on product_id
+        this.cartItems.forEach((cartItem) => {
+          const product = this.products.find((p) => p.id === cartItem.product_id);
+          if (product) {
+            cartItem.product = product;
+          }
+        });
+        this.cartTotal = this.cartItems.reduce((acc, cartItem) => acc + cartItem.subtotal, 0);
+        console.log(this.cartTotal)
+
+      },
+      (error) => {
+        console.error(error);
+      }
+    );
   }
-  addToCart(product: Product): void {
-    this.cartService.addToCart(product);
-    this.cartItems = this.cartService.getCartItems();
-    this.cartTotal = this.cartService.getCartTotal();
+  
+
+
+  addToCart(productId: string): void {
+    this.cartService.addToCart(productId).subscribe(()=>{
+      console.log('product added in cart')
+    },
+    (error)=>{
+      console.log(error)
+      }
+    )
+ 
+
   }
   removeFromCart(product: Product): void {
     this.cartService.removeFromCart(product);
-    this.cartItems = this.cartService.getCartItems();
     this.cartTotal = this.cartService.getCartTotal();
   }
   
@@ -45,7 +82,7 @@ export class CartComponent implements OnInit{
   //   this.router.navigate(['/checkout', cartId ]);
   // }
   goToOrderForm(): void {
-    const cartId: number = this.cartService.generateCartId(); // Get the cartId dynamically from the cart service
+    const cartId: number = this.cartService.generateCartId();
     this.router.navigate(['/checkout', cartId]);
   }
 
@@ -54,3 +91,5 @@ export class CartComponent implements OnInit{
 
     
 }
+
+

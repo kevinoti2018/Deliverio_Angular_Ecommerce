@@ -16,7 +16,9 @@ export class RegisterComponent implements OnInit {
   constructor(
     private fb: FormBuilder,
     private userService: UserService,
+
     private router:Router
+
   ) {}
 
   ngOnInit(): void {
@@ -41,6 +43,8 @@ export class RegisterComponent implements OnInit {
         (response) => {
           console.log('User created:', response);
           this.router.navigateByUrl('')
+       
+
         },
         (error) => {
           console.log('Error creating user:', error);

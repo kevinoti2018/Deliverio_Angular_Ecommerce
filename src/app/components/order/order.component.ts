@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { from } from 'rxjs';
-import { Order } from 'src/Interfaces/Interfaces';
+import { CART, Order, Product } from 'src/Interfaces/Interfaces';
 import { CartService } from 'src/app/services/cartservice/cart.service';
 import { OrderService } from 'src/app/services/orderservice/order.service';
 import { FormsModule } from '@angular/forms';
@@ -20,8 +20,13 @@ import { CommonModule } from '@angular/common';
 
 
 export class OrderComponent implements OnInit {
+  cartItems!: CART[];
+  products: Product[] = [];
+  cartTotal: number = 0;
+  cartid!:number;
+
+
   orders: Order[] = [];
-  cartTotal:number=0;
   firstName!: string;
   county!: string;
   city!: string;
@@ -32,7 +37,25 @@ export class OrderComponent implements OnInit {
   constructor(private orderService: OrderService, private cartService:CartService) {}
   
   ngOnInit(): void {
-    this.calculateCartTotal();
+     this.cartService.viewCart().subscribe(
+      (data: CART[]) => {
+        this.cartItems = data;
+      
+        // Extract product information based on product_id
+        this.cartItems.forEach((cartItem) => {
+          const product = this.products.find((p) => p.id === cartItem.product_id);
+          if (product) {
+            cartItem.product = product;
+          }
+        });
+        this.cartTotal = this.cartItems.reduce((acc, cartItem) => acc + cartItem.subtotal, 0);
+        console.log(this.cartTotal)
+
+      },
+      (error) => {
+        console.error(error);
+      }
+    );
   }
 
    

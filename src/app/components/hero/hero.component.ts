@@ -9,7 +9,7 @@ import { CategoryService } from 'src/app/services/categoryservices/category.serv
   styleUrls: ['./hero.component.css']
 })
 export class HeroComponent implements OnInit {
-  categories:Category1[]=[]
+  categories:Slide[]=[]
   constructor(private categoryService:CategoryService){
 
   }
@@ -19,8 +19,8 @@ export class HeroComponent implements OnInit {
    
   }
   getCategories(){
-    this.categoryService.getCategory1().subscribe(
-      (response)=> this.categories = response
-    )
+    this.categories= this.categoryService.getCategory()
+   }
   }
-}
+  
+

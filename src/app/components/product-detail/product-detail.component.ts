@@ -28,12 +28,17 @@ export class ProductDetailComponent implements OnInit {
       this.productId=param['id']
       this.productservice.getsingleproduct(this.productId).subscribe((product:Product)=>{
         this.product=product;
-        console.log(this.product)
-      })
+        console.log(this.product)})
     })
   }
   
-  addToCart(product: Product): void {
-    this.cartService.addToCart(product);
+  addToCart(productId: string): void {
+    this.cartService.addToCart(productId).subscribe(()=>{
+      console.log("added to cart")
+    },
+    (error)=>{
+      console.log(error.message)
+    }
+    )
   }
 }
