@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import { Category, Category1, Slide } from 'src/Interfaces/Interfaces';
+import { Category, Category1, Product, Slide } from 'src/Interfaces/Interfaces';
 
 @Injectable({
   providedIn: 'root'
@@ -70,12 +70,17 @@ export class CategoryService {
   constructor(private httpClient:HttpClient) { 
     
   }
+  
   private baseurl = 'http://localhost:5000/products';
   getCategory1():Observable<Category1[]>{
     return this.httpClient.get<Category1[]>(`${this.baseurl}/getcategories`)
   }
   getCategory(){
     return this.categories
+  }
+  getProductsByCategory(categoryId: string): Observable<Product[]> {
+    const url = `${this.baseurl}/getcategory/${categoryId}`;
+    return this.httpClient.get<Product[]>(url);
   }
 }
 

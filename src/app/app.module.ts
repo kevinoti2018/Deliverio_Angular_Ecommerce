@@ -22,6 +22,8 @@ import { StoreModule } from '@ngrx/store';
 import { EffectsModule } from '@ngrx/effects';
 import { productreducer } from './components/store/reducers/products.reducer';
 import { ProductEffects } from './components/store/effects/products.effects';
+import { ProductCategoryComponent } from './product-category/product-category.component';
+import { ResetPasswordComponent } from './reset-password/reset-password.component';
 
 // import { NzCollapseModule } from 'ng-zorro-antd/collapse';
 
@@ -34,6 +36,8 @@ import { ProductEffects } from './components/store/effects/products.effects';
         RegisterComponent,
         CategoriesComponent,
         FooterComponent,
+        ProductCategoryComponent,
+        ResetPasswordComponent,
        
     ],
     bootstrap: [AppComponent],
@@ -54,6 +58,7 @@ import { ProductEffects } from './components/store/effects/products.effects';
         BrowserAnimationsModule,
         StoreModule.forRoot({products:productreducer},{}),
         EffectsModule.forRoot([ProductEffects]),
+        StoreModule.forRoot({}, {}),
     
 
     ]

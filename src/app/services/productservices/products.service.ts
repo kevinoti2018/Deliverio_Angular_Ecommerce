@@ -23,5 +23,10 @@ export class ProductsService {
   getsingleproduct(productId:string):Observable<Product>{
     return this.http.get<Product>(`${this.baseurl}/getproduct/${productId}`);
   }
+
+  getProductsByCategory(categoryId: string): Observable<Product[]> {
+    const url = `${this.baseurl}/getcategory/${categoryId}`;
+    return this.http.get<Product[]>(url);
+  }
 }
 
