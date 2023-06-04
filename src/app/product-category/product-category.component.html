@@ -1,0 +1,21 @@
+<div  *ngFor="let product of products" class="products">
+<div class="product">
+    <p>{{product.name}}</p>
+    <img [src]="product.images" alt="">
+</div>
+</div>
+
+<style>
+    .products{
+        display: flex;
+        background-color: red;
+    }
+    .product{
+        width: 5rem;
+        background-color: #fff;
+    }
+     image{
+        width: 4rem;
+        height: 4rem;
+    }
+</style>

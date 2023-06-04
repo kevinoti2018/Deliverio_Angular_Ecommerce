@@ -37,7 +37,7 @@ export class CategoriesComponent implements OnInit {
     nav: true
   }
 
-  slidesStore: Slide[] = [
+  slidesStore: Category1[] = []
     
 
   // slidesStore: Slide[] = [
@@ -78,7 +78,7 @@ export class CategoriesComponent implements OnInit {
   //     name: 'Slide 3 name'
   //   },
 
-  ];
+  
   constructor(private categoryService:CategoryService){
 
   }
@@ -87,7 +87,9 @@ export class CategoriesComponent implements OnInit {
    this.getCategories()
   }
   getCategories(){
-   this.slidesStore= this.categoryService.getCategory()
+   this.categoryService.getCategory1().subscribe(
+    (response)=> this.slidesStore = response
+   )
   }
 
 }
