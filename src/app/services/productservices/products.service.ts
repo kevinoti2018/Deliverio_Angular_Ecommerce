@@ -41,10 +41,15 @@ export class ProductsService {
     return this.http.get<Product[]>(url);
   }
   
-AddproductComponent(newProduct:Product):Observable<Product>{
+  AddproductComponent(newProduct:Product):Observable<Product>{
    return this.http.post<Product>(`${this.baseurl}/addproduct`,newProduct)
 
 }
+
+updateProduct(product: Product): Observable<Product> {
+  return this.http.put<Product>(`${this.baseurl}/updateproduct/${product.id}`, product);
+}
+
 DeleteproductComponent(id:string):Observable<ProductSuccess>{
    return this.http.delete<ProductSuccess>(`${this.baseurl}/addproduct/${id}`)
 

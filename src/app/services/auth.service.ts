@@ -42,7 +42,7 @@ export class AuthService {
 
    isAdmin(){
     let role=localStorage.getItem('role')
-    return  role==='admin' ?true :false
+    return  role==='1' ?true :false
    }
    getUsername(){
     let username=localStorage.getItem('username')
