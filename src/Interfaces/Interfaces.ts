@@ -58,6 +58,7 @@ export interface Category1{
     IMAGE:string
 }
 
+
 export  interface Product{
     category_id:string,
     id:string,

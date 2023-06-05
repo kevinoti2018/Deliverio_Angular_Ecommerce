@@ -12,6 +12,7 @@ import { HeroComponent } from './components/hero/hero.component';
 import { RegisterComponent } from './components/register/register.component';
 import { ContactUsComponent } from './components/contact-us/contact-us.component';
 import { ResetPasswordComponent } from './reset-password/reset-password.component';
+import { AddproductComponent } from './components/addproduct/addproduct.component';
 
 
 
@@ -21,7 +22,7 @@ const routes:Routes=[
   {path:'register',component:RegisterComponent},
   {path:'reset',component:ResetPasswordComponent},
   {path:'products',component:ProductsComponent},
-  {path:'products/add',component:ProductsComponent},
+  {path:'products/add',component:AddproductComponent},
   {path:'products/:categoryId',component:ProductCategoryComponent},
   {path:'help',component:ContactUsComponent},
   {path:'cart',component:CartComponent},

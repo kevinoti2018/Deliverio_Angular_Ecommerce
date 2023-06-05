@@ -35,10 +35,13 @@ export class ProductsService {
     return this.http.get<Product[]>(url);
   }
   
-AddproductComponent(newProduct:Product[]):Observable<Product[]>{
-   return this.http.post<Product[]>(`${this.baseurl}/addproduct`,newProduct)
+AddproductComponent(newProduct:Product):Observable<Product>{
+   return this.http.post<Product>(`${this.baseurl}/addproduct`,newProduct)
 
 }
+
+
+
 }
 
 

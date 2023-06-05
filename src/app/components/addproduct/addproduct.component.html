@@ -1,1 +1,44 @@
+<h2>Add Product</h2>
+
+<form [formGroup]="productForm" (ngSubmit)="onSubmit()">
+  <div>
+    <select formControlName="category">
+      <option *ngFor="let category of categories" value="{{category.ID}}" >{{category.NAME}}</option>
+    </select>
+  </div>
+
+  <div>
+    <label for="name">Name:</label>
+    <input type="text" id="name" formControlName="name">
+    <div *ngIf="productForm.get('name')?.invalid && productForm.get('name')?.touched">
+     <span> Name is required.</span>
+    </div>
+  </div>
+
+  <div>
+    <label for="description">Description:</label>
+    <textarea id="description" formControlName="description"></textarea>
+    <div *ngIf="productForm.get('description')?.invalid && productForm.get('description')?.touched">
+      <span>Description is required.</span>
+    </div>
+  </div>
+
+  <div>
+    <label for="images">Images:</label>
+    <input type="text" id="images" formControlName="images">
+    <div *ngIf="productForm.get('images')?.invalid && productForm.get('images')?.touched">
+      <span>Images are required.</span>
+    </div>
+  </div>
+
+  <div>
+    <label for="price">Price:</label>
+    <input type="text" id="price" formControlName="price">
+    <div *ngIf="productForm.get('price')?.invalid && productForm.get('price')?.touched">
+     <span> Price is required and should be a valid number (up to 2 decimal places).</span>
+    </div>
+  </div>
+
+  <button type="submit" [disabled]="productForm.invalid">Add Product</button>
+</form>
 
