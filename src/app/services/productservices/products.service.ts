@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { CART, Product } from 'src/Interfaces/Interfaces';
+import { CART, CARTITEM, Product } from 'src/Interfaces/Interfaces';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { GetProducts } from 'src/app/components/store/actions/products.action';
@@ -27,6 +27,11 @@ export class ProductsService {
   AddToCart(productId:string):Observable<CART>{
     let payload={productId}
     return this.http.post<CART>(`${this.carturl}/add_to_cart/${productId}`,payload);
+  }
+ 
+
+  viewcart():Observable<CARTITEM[]>{
+    return this.http.get<CARTITEM[]>(`${this.carturl}/view_cart`);
   }
 
 

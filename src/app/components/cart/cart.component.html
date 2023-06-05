@@ -10,8 +10,8 @@
  <div *ngIf="cartItems" style="margin-top: 100px;">
   <div *ngFor="let item of cartItems">
     <div class="cart-card">
-      <p>Product ID: {{ item.product }}</p>
-      <p>Product Name: {{ item.product?.name }}</p>
+      <p>Product ID: {{ item.id }}</p>
+      <p>Product Name: {{ item.product?.name}}</p>
       <p>Quantity: {{ item.quantity }}</p>
       <p>Subtotal:</p>
     </div>
