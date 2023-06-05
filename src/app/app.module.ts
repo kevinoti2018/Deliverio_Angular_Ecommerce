@@ -22,7 +22,7 @@ import { StoreModule } from '@ngrx/store';
 import { EffectsModule } from '@ngrx/effects';
 import { productreducer } from './components/store/reducers/products.reducer';
 import { ProductEffects } from './components/store/effects/products.effects';
-import { StoreDevtoolsModule } from '@ngrx/store-devtools';
+// import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { ProductCategoryComponent } from './product-category/product-category.component';
 import { ResetPasswordComponent } from './reset-password/reset-password.component';
 import { AddproductComponent } from './components/addproduct/addproduct.component';
@@ -62,7 +62,7 @@ import { AddproductComponent } from './components/addproduct/addproduct.componen
         BrowserAnimationsModule,
         StoreModule.forRoot({products:productreducer},{}),
         EffectsModule.forRoot([ProductEffects]),
-        StoreDevtoolsModule.instrument({ maxAge: 25, logOnly: !isDevMode() })
+        // StoreDevtoolsModule.instrument({ maxAge: 25, logOnly: !isDevMode() })
     
 
     ]
