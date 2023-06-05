@@ -12,7 +12,7 @@
     <div class="links">
         
        
-        <p><a routerLink="/help">Help</a></p>
+        <p><a routerLink="/help" *ngIf="!authService.isAdmin()"  >Help</a></p>
         <!-- *ngIf="authService.isAdmin()" -->
         <p><a routerLink="/products/add">Add Product</a></p>
 

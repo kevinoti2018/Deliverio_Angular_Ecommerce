@@ -23,9 +23,10 @@ const routes:Routes=[
   {path:'reset',component:ResetPasswordComponent},
   {path:'products',component:ProductsComponent},
   {path:'products/add',component:AddproductComponent},
-  {path:'products/:categoryId',component:ProductCategoryComponent},
   {path:'help',component:ContactUsComponent},
   {path:'cart',component:CartComponent},
+  {path:'products/update/:id',component:AddproductComponent},
+  {path:'products/:categoryId',component:ProductCategoryComponent},
   {path:'checkout/:id',component:OrderComponent},
   {path:'product/:id',component:ProductDetailComponent},
   {path:'**',component:NotfoundComponent}

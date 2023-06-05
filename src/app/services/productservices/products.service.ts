@@ -46,12 +46,15 @@ export class ProductsService {
 
 }
 
-updateProduct(product: Product): Observable<Product> {
-  return this.http.put<Product>(`${this.baseurl}/updateproduct/${product.id}`, product);
+
+updateProduct(id:string,product: Product): Observable<Product> {
+  console.log(product);
+  
+  return this.http.patch<Product>(`${this.baseurl}/updateproduct/${id}`, product);
 }
 
-DeleteproductComponent(id:string):Observable<ProductSuccess>{
-   return this.http.delete<ProductSuccess>(`${this.baseurl}/addproduct/${id}`)
+Deleteproduct(id:string):Observable<ProductSuccess>{
+   return this.http.delete<ProductSuccess>(`${this.baseurl}/deleteproduct/${id}`)
 
 }
 

@@ -57,8 +57,8 @@
                 <div class="b-bottom" style="display: flex ;justify-content:space-between; width: 60%" >
                   
                         <button> <span></span> <a (click)="addToCart(product.id)" style="text-decoration: none; color: white;">Add to cart</a></button>
-                        <button  *ngIf="authservice.isAdmin()"> <span></span> <a routerLink="" style="text-decoration: none; color: white;">edit</a></button>
-                        <button  *ngIf="authservice.isAdmin()"> <span></span> <a  style="text-decoration: none; color: white;">delete</a></button>
+                        <button> <span></span> <a [routerLink]="['/products/update',product.id]"  style="text-decoration: none; color: white;">edit</a></button>
+                        <button  *ngIf="authservice.isAdmin()" > <span></span> <a  style="text-decoration: none; color: white;" (click)="deleteProduct(product.id)">delete</a></button>
                    
                 </div>
             </div>
