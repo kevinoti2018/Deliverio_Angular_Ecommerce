@@ -3,7 +3,6 @@ export interface Slide{
     image: string,
     name: string
   }
-// export interface Slide{
 
 //     id: string,
 
@@ -69,32 +68,14 @@ export  interface Product{
 }
 
 export interface CART {
-  cart_id:string;
+  id:string;
   product_id:string;
   quantity:number;
-  price:number;
-  subtotal:number;
-  total:number;
   product?:Product;
 }
-
-
-
-export  interface Cart{
-    id:string,
-    subtotal:number
-}
-
-export interface CartItem {
-    id:number;
-    product: Product;
-    quantity: number;
-  }
-  
-
  export  interface Order {
     orderId: number;
-    items: CartItem[];
+    items: CART[];
     firstName:string;
     lastName:string;
     email:string;

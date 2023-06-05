@@ -48,8 +48,8 @@ export class OrderComponent implements OnInit {
             cartItem.product = product;
           }
         });
-        this.cartTotal = this.cartItems.reduce((acc, cartItem) => acc + cartItem.subtotal, 0);
-        console.log(this.cartTotal)
+        // this.cartTotal = this.cartItems.reduce((acc, cartItem) => acc + cartItem.subtotal, 0);
+        // console.log(this.cartTotal)
 
       },
       (error) => {
@@ -59,24 +59,45 @@ export class OrderComponent implements OnInit {
   }
 
    
+  // placeOrder(): void {
+  //   const order: Order = {
+  //     orderId: Math.floor(Math.random() * 100),
+  //     items: this.cartService.viewCart().subscribe(),
+  //     firstName: this.firstName,
+  //     lastName: this.lastName,
+  //     county: this.county,
+  //     city: this.city,
+  //     shippingAddress: this.address,
+  //     email: this.email
+  //   };
+
+
+  //   this.orderService.placeOrder(order);
+  //   console.log(order)
+  //   this.cartService.clearCart();
+  // }
+  
+
   placeOrder(): void {
-    const order: Order = {
-      orderId: Math.floor(Math.random() * 100),
-      items: this.cartService.getCartItems(),
-      firstName: this.firstName,
-      lastName: this.lastName,
-      county: this.county,
-      city: this.city,
-      shippingAddress: this.address,
-      email: this.email
-    };
-
-
-    this.orderService.placeOrder(order);
-    console.log(order)
-    this.cartService.clearCart();
+    this.cartService.viewCart().subscribe((cartItems: CART[]) => {
+      const order: Order = {
+        orderId: Math.floor(Math.random() * 100),
+        items: cartItems,
+        firstName: this.firstName,
+        lastName: this.lastName,
+        county: this.county,
+        city: this.city,
+        shippingAddress: this.address,
+        email: this.email
+      };
+  
+      this.orderService.placeOrder(order);
+      console.log(order);
+      this.cartService.clearCart();
+    });
   }
   
+
 
   getOrders(): void {
     this.orders = this.orderService.getOrders();

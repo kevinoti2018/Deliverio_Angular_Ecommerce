@@ -1,20 +1,22 @@
-import { createSelector } from "@ngrx/store";
-import { ProductsState } from "../reducers/products.reducer";
+import { createFeatureSelector, createSelector } from "@ngrx/store";
+import { CartStateInterface, ProductsState } from "../reducers/products.reducer";
 import { AppState } from "../state/app.state";
 import { Product } from "src/Interfaces/Interfaces";
 
 
+export const selectedProducts = createFeatureSelector<ProductsState>('products');
+export const selectCart =(state:AppState)=>state.cart
 
 
 
 
-export const selectedProducts=(state:AppState)=>state.products
+
 
 export const selectAllProducts=createSelector(
     selectedProducts,(state:ProductsState)=>state.products
 );
-export const selectSingleProduct = createSelector(
-    selectAllProducts,
-    (products: Product[], productId: string) =>
-      products.find((product) => product.id === productId)
-  );
+
+export const selectCartItems = createSelector(
+    selectCart,
+    (state:CartStateInterface)=> state.cart
+)
