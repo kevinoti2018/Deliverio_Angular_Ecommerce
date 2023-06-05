@@ -1,8 +1,14 @@
+
+<div class="f-container">
+  <div class="forms">
+    <h2>Add Product</h2>
+
 <h2>{{action}} Product</h2>
 
-<form [formGroup]="productForm" (ngSubmit)="onSubmit()">
+
+<form [formGroup]="productForm" (ngSubmit)="onSubmit()" class="form">
   <div>
-    <select formControlName="category">
+    <select formControlName="category"> 
       <option *ngFor="let category of categories" value="{{category.ID}}" >{{category.NAME}}</option>
     </select>
   </div>
@@ -42,3 +48,6 @@
   <button type="submit" [disabled]="productForm.invalid">{{action}} Product</button>
 </form>
 
+
+  </div>
+</div>
