@@ -14,7 +14,7 @@
        
         <p><a routerLink="/help" *ngIf="!authService.isAdmin()"  >Help</a></p>
         <!-- *ngIf="authService.isAdmin()" -->
-        <p><a routerLink="/products/add" *ngIf="authService.isAdmin()">Add Product</a></p>
+        <p><a routerLink="/products/add">Add Product</a></p>
 
         <p><a [routerLink]="'./cart'">Cart</a></p>
         <p> <a routerLink="/register" *ngIf="!authService.isLoggedIn()">

@@ -8,49 +8,39 @@ import { ProductsService } from 'src/app/services/productservices/products.servi
 @Component({
   selector: 'app-cart',
   standalone: true,
-  imports: [CommonModule,RouterModule],
+  imports: [CommonModule, RouterModule],
   templateUrl: './cart.component.html',
   styleUrls: ['./cart.component.css'],
 })
-export class CartComponent implements OnInit{
+export class CartComponent implements OnInit {
   cartItems!: CART[];
   products: Product[] = [];
-  Subtotal:number=0;
+  Subtotal: number = 0;
   cartTotal: number = 0;
-  cartid!:number;
+  cartid!: number;
 
-  cart:any[]=[]
+  cart: any[] = [];
 
-  constructor(private cartService: CartService,private router:Router,private productService:ProductsService) { }
-    
+  constructor(
+    private cartService: CartService,
+    private router: Router,
+    private productService: ProductsService
+  ) {}
+
   ngOnInit(): void {
-    
-    this.productService.getallproducts().subscribe(
-      (response: Product[]) => {
-        this.products = response;
-      },
-      (error) => {
-        console.error(error);
-      }
-    );
-
-
     this.cartService.viewCart().subscribe(
       (data: CART[]) => {
         this.cartItems = data;
-        console.log(this.cartItems)
-      
-        // Extract product information based on product_id
-        this.cartItems.forEach((cartItem) => {
-          const product = this.products.find((p) => p.id === cartItem.product_id);
-          if (product) {
-            cartItem.product = product;
-            console.log(product)
-          }
-        });
-        // this.cartTotal = this.cartItems.reduce((acc, cartItem) => acc + cartItem.subtotal, 0);
-        // console.log(this.cartTotal)
+        console.log(this.cartItems);
+  
+        this.productService.getallproducts().subscribe((products) => {
+          console.log(products);
+        
 
+          this.cartItems.forEach(cartitem=>{
+            const product=products.findIndex(p=>p.id === cartitem.product_id)
+          })
+        });
       },
       (error) => {
         console.error(error);
@@ -59,10 +49,8 @@ export class CartComponent implements OnInit{
   }
   
 
-
-
   addToCart(productId: string): void {
-    this.cartService.addToCart(productId)
+    this.cartService.addToCart(productId);
   }
 
   // addToCart(productId: string): void {
@@ -73,14 +61,13 @@ export class CartComponent implements OnInit{
   //     console.log(error)
   //     }
   //   )
- 
 
   // }
   removeFromCart(product: Product): void {
     this.cartService.removeFromCart(product);
     this.cartTotal = this.cartService.getCartTotal();
   }
-  
+
   clearCart(): void {
     // Clear the cart items
     this.cartService.clearCart();
@@ -95,11 +82,4 @@ export class CartComponent implements OnInit{
     const cartId: number = this.cartService.generateCartId();
     this.router.navigate(['/checkout', cartId]);
   }
-
-  
-  
-
-    
 }
-
-

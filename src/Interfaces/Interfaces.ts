@@ -76,6 +76,16 @@ export interface CART {
   quantity:number;
   product?:Product;
 }
+
+export interface CARTITEM{
+    cartItemId:string,
+    name:string,
+    productid:string,
+    productdescription:string, 
+    productprice:string, 
+    productimages:string,
+    cartquantity:number
+}
  export  interface Order {
     orderId: number;
     items: CART[];
