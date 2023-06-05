@@ -40,6 +40,7 @@ export class AddproductComponent implements OnInit {
     }
 
     const product: Product = this.productForm.value;
+    // console.log(product)
     this.productService.AddproductComponent(product).subscribe(
       response => {
         console.log('Product added successfully!', response);
