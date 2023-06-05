@@ -67,7 +67,9 @@ export  interface Product{
     images:string,
     price:number
 }
-
+export interface ProductSuccess{
+    message:string
+}
 export interface CART {
   id:string;
   product_id:string;

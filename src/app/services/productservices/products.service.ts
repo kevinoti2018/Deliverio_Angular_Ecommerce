@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { CART, Product } from 'src/Interfaces/Interfaces';
+import { CART, Product, ProductSuccess } from 'src/Interfaces/Interfaces';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { GetProducts } from 'src/app/components/store/actions/products.action';
@@ -37,6 +37,10 @@ export class ProductsService {
   
 AddproductComponent(newProduct:Product):Observable<Product>{
    return this.http.post<Product>(`${this.baseurl}/addproduct`,newProduct)
+
+}
+DeleteproductComponent(id:string):Observable<ProductSuccess>{
+   return this.http.delete<ProductSuccess>(`${this.baseurl}/addproduct/${id}`)
 
 }
 

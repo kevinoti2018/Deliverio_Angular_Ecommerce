@@ -6,6 +6,7 @@ import { Product } from 'src/Interfaces/Interfaces';
 import { CartService } from 'src/app/services/cartservice/cart.service';
 import { ProductsService } from 'src/app/services/productservices/products.service';
 import { selectAllProducts } from '../store/selectors/products.selector';
+import { AuthService } from 'src/app/services/auth.service';
 
 
 @Component({
@@ -18,13 +19,14 @@ import { selectAllProducts } from '../store/selectors/products.selector';
 export class ProductDetailComponent implements OnInit {
    product!: any;
 
-   constructor(private route:ActivatedRoute,private cartService:CartService,private productservice:ProductsService, private store:Store){
-
+   constructor(private route:ActivatedRoute,private cartService:CartService,private productservice:ProductsService, private store:Store,public  authservice:AuthService){
+      this.authservice= authservice
    }
 
 
 
   ngOnInit(): void {
+    this.authservice.isAdmin()
     this.route.params.subscribe((param)=>{
        this.store.select(selectAllProducts).subscribe((products)=>{
         console.log(products)
