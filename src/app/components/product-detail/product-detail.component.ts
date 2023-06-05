@@ -1,8 +1,8 @@
 import { CommonModule } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute, RouterModule } from '@angular/router';
+import { ActivatedRoute, Router, RouterModule } from '@angular/router';
 import { Store } from '@ngrx/store';
-import { Product } from 'src/Interfaces/Interfaces';
+import { Product, ProductSuccess } from 'src/Interfaces/Interfaces';
 import { CartService } from 'src/app/services/cartservice/cart.service';
 import { ProductsService } from 'src/app/services/productservices/products.service';
 import { selectAllProducts } from '../store/selectors/products.selector';
@@ -19,7 +19,7 @@ import { AuthService } from 'src/app/services/auth.service';
 export class ProductDetailComponent implements OnInit {
    product!: any;
 
-   constructor(private route:ActivatedRoute,private cartService:CartService,private productservice:ProductsService, private store:Store,public  authservice:AuthService){
+   constructor(private route:ActivatedRoute,private cartService:CartService,private productservice:ProductsService, private store:Store,public  authservice:AuthService, private router:Router){
       this.authservice= authservice
    }
 
@@ -48,5 +48,19 @@ export class ProductDetailComponent implements OnInit {
       console.log(error.message)
     }
     )
+  }
+
+  deleteProduct(id: string): void {
+    this.productservice.Deleteproduct(id).subscribe(
+      (response: ProductSuccess) => {
+        // Handle successful deletion
+        console.log('Product deleted successfully!');
+        this.router.navigateByUrl('')
+      },
+      (error) => {
+        // Handle error
+        console.error('Error deleting product:', error);
+      }
+    );
   }
 }
