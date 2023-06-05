@@ -13,7 +13,7 @@ export const selectCart =(state:AppState)=>state.cart
 
 
 export const selectAllProducts=createSelector(
-    selectedProducts,(state:ProductsState)=>state.products
+    selectedProducts,(state:ProductsState)=>state.products.slice(1,6)
 );
 
 export const selectCartItems = createSelector(

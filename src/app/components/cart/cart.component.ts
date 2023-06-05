@@ -19,6 +19,8 @@ export class CartComponent implements OnInit{
   cartTotal: number = 0;
   cartid!:number;
 
+  cart:any[]=[]
+
   constructor(private cartService: CartService,private router:Router,private productService:ProductsService) { }
     
   ngOnInit(): void {
@@ -43,7 +45,6 @@ export class CartComponent implements OnInit{
           const product = this.products.find((p) => p.id === cartItem.product_id);
           if (product) {
             cartItem.product = product;
-
             console.log(product)
           }
         });
@@ -57,6 +58,9 @@ export class CartComponent implements OnInit{
     );
   }
   
+
+
+
   addToCart(productId: string): void {
     this.cartService.addToCart(productId)
   }

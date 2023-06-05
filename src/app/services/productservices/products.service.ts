@@ -24,17 +24,16 @@ export class ProductsService {
     return this.http.get<Product>(`${this.baseurl}/getproduct/${productId}`);
   }
 
-<<<<<<< HEAD
   AddToCart(productId:string):Observable<CART>{
     let payload={productId}
     return this.http.post<CART>(`${this.carturl}/add_to_cart/${productId}`,payload);
   }
 
-=======
+
   getProductsByCategory(categoryId: string): Observable<Product[]> {
     const url = `${this.baseurl}/getcategory/${categoryId}`;
     return this.http.get<Product[]>(url);
   }
->>>>>>> e71e873c25fed512b21c8faf013580b6ff1e812f
+
 }
 

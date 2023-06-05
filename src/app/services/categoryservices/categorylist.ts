@@ -3,54 +3,39 @@ import { Category, Slide } from "src/Interfaces/Interfaces";
 export const sampleCategories: Slide[] = [
     {
       id: '1',
-      name: 'Electronics',
-      image: 'https://example.com/electronics.png',
-    },
-    {
-      id: '2',
-      name: 'Clothing',
-      image: 'https://example.com/clothing.png',
+      name: 'Sporting Goods',
+      image: 'https://howtostartanllc.com/images/business-ideas/business-idea-images/sporting-goods-store.jpg',
     },
     {
       id: '3',
-      name: 'Home Decor',
-      image: 'https://example.com/home-decor.png',
+      name: 'Home & Office',
+      image: 'https://elegance.co.ke/pub/media/catalog/category/T/W/TW-0077_BS-812_-05.jpg',
     },
     {
       id: '4',
-      name: 'Books',
-      image: 'https://example.com/books.png',
+      name: 'Appliances',
+      image: 'https://cdn.firstcry.com/education/2023/01/13101355/Names-Of-Household-Appliances-In-English.jpg',
     },
     {
       id: '5',
       name: 'Beauty',
-      image: 'https://example.com/beauty.png',
+      image: 'https://img.freepik.com/free-photo/collection-beauty-products-with-copy-space_23-2148620110.jpg?w=2000',
     },
     {
       id: '6',
-      name: 'Sports',
-      image: 'https://example.com/sports.png',
+      name: 'Fashion',
+      image: 'https://media.istockphoto.com/id/1208148708/photo/polka-dot-summer-brown-dress-suede-wedge-sandals-eco-straw-tote-bag-cosmetics-on-a-light.jpg?s=612x612&w=0&k=20&c=9Y135GYKHLlPotGIfynBbMPhXNbYeuDuFzreL_nfDE8=',
     },
     {
       id: '7',
-      name: 'Toys',
-      image: 'https://example.com/toys.png',
+      name: 'Top Deals',
+      image: 'https://i.insider.com/5e178616f442316b462cf134?width=1136&format=jpeg',
     },
     {
       id: '8',
-      name: 'Jewelry',
-      image: 'https://example.com/jewelry.png',
-    },
-    {
-      id: '9',
-      name: 'Kitchenware',
-      image: 'https://example.com/kitchenware.png',
-    },
-    {
-      id: '10',
-      name: 'Furniture',
-      image: 'https://example.com/furniture.png',
-    },
+      name: 'Computing',
+      image: 'https://www.almiriatechstore.co.ke/wp-content/uploads/2021/11/Computing-Products.jpg',
+    }
   ];
   
 
