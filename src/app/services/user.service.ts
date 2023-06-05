@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import { LogUserSuccess, LoginUser, User, UserSuccess } from 'src/Interfaces/Interfaces';
+import { LogUserSuccess, LoginUser, ResetUser, User, UserSuccess } from 'src/Interfaces/Interfaces';
 
 @Injectable({
   providedIn: 'root'
@@ -21,5 +21,8 @@ export class UserService {
   
   createUser(newUser:User):Observable<UserSuccess>{
     return this.httpClient.post<UserSuccess>(`${this.baseUrl}/adduser`,newUser)
+  }
+  resetUser(resetUser:ResetUser):Observable<LogUserSuccess>{
+    return this.httpClient.put<LogUserSuccess>(`${this.baseUrl}/reset`,resetUser)
   }
 }

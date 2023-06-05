@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { UserService } from 'src/app/services/user.service';
-import { LoginUser } from 'src/Interfaces/Interfaces';
+import { ResetUser } from 'src/Interfaces/Interfaces';
 import { AuthService } from '../services/auth.service';
 @Component({
   selector: 'app-reset-password',
@@ -22,18 +22,22 @@ export class ResetPasswordComponent implements OnInit {
   ngOnInit(): void {
     this.resetForm = this.fb.group({
       email: ['', [Validators.required, Validators.email]],
-      password: ['', Validators.required]
+      newPassword: ['', Validators.required]
     });
     
   }
   submit(): void {
+    console.log('clicked');
+    
+    
     if (this.resetForm.valid) {
-      const loginUser: LoginUser = {
+      const resetUser: ResetUser = {
         email: this.resetForm.get('email')?.value,
-        password: this.resetForm.get('password')?.value
+        newPassword: this.resetForm.get('newPassword')?.value
+
       };
 
-      this.userService.loginUser(loginUser).subscribe(
+      this.userService.resetUser(resetUser).subscribe(
       
         (response) => {
           console.log('User logged in:', response);
