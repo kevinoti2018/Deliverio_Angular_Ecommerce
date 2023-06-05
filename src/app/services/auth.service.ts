@@ -34,15 +34,15 @@ export class AuthService {
     return  this.token? true :false
    }
 
-   isLandlord(){
-    let role=localStorage.getItem('role')
-    return role==='landlord' || role==='admin' ?true :false
+  //  isLandlord(){
+  //   let role=localStorage.getItem('role')
+  //   return role==='landlord' || role==='admin' ?true :false
     
-   }
+  //  }
 
    isAdmin(){
     let role=localStorage.getItem('role')
-    return  role==='admin' ?true :false
+    return  role==='1' ?true :false
    }
    getUsername(){
     let username=localStorage.getItem('username')

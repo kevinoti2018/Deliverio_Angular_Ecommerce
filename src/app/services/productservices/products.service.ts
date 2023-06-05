@@ -45,8 +45,8 @@ AddproductComponent(newProduct:Product):Observable<Product>{
    return this.http.post<Product>(`${this.baseurl}/addproduct`,newProduct)
 
 }
-DeleteproductComponent(id:string):Observable<ProductSuccess>{
-   return this.http.delete<ProductSuccess>(`${this.baseurl}/addproduct/${id}`)
+Deleteproduct(id:string):Observable<ProductSuccess>{
+   return this.http.delete<ProductSuccess>(`${this.baseurl}/deleteproduct/${id}`)
 
 }
 
