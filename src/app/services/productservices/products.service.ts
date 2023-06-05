@@ -34,6 +34,11 @@ export class ProductsService {
     const url = `${this.baseurl}/getcategory/${categoryId}`;
     return this.http.get<Product[]>(url);
   }
+  
+AddproductComponent(newProduct:Product[]):Observable<Product[]>{
+   return this.http.post<Product[]>(`${this.baseurl}/addproduct`,newProduct)
 
 }
+}
+
 

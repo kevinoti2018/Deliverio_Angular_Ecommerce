@@ -11,6 +11,7 @@ import { OrderComponent } from './components/order/order.component';
 import { HeroComponent } from './components/hero/hero.component';
 import { RegisterComponent } from './components/register/register.component';
 import { ContactUsComponent } from './components/contact-us/contact-us.component';
+import { ResetPasswordComponent } from './reset-password/reset-password.component';
 
 
 
@@ -18,7 +19,9 @@ const routes:Routes=[
   {path:'',component:HeroComponent},
   {path:'login',component:LoginComponent},
   {path:'register',component:RegisterComponent},
+  {path:'reset',component:ResetPasswordComponent},
   {path:'products',component:ProductsComponent},
+  {path:'products/add',component:ProductsComponent},
   {path:'products/:categoryId',component:ProductCategoryComponent},
   {path:'help',component:ContactUsComponent},
   {path:'cart',component:CartComponent},
